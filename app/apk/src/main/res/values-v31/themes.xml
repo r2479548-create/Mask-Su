@@ -7,5 +7,5 @@
         - windowSplashScreenIconBackgroundColor：图标背景圆形色
         - postSplashScreenTheme：Splash 消失后切换的宿主主题
     -->
-    <style name="Theme.WeaveMagisk.Splash" parent="Theme.WeaveMagisk.Splash.Default" />
+    <style name="Theme.MaskSu.Splash" parent="Theme.MaskSu.Splash.Default" />
 </resources>

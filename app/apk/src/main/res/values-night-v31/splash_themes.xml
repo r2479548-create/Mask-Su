@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.WeaveMagisk.Splash.MonetSystem" parent="Theme.WeaveMagisk.Splash.MonetSystem.Dark" />
+    <style name="Theme.MaskSu.Splash.MonetSystem" parent="Theme.MaskSu.Splash.MonetSystem.Dark" />
 </resources>

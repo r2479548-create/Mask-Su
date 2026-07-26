@@ -62,9 +62,9 @@ class WebUIActivity : ComponentActivity() {
     }
 
     private fun resolveWebUiTheme(colorMode: Int): Int = when (colorMode) {
-        1, 4 -> R.style.Theme_WeaveMagisk_WebUI_Light
-        2, 5 -> R.style.Theme_WeaveMagisk_WebUI_Dark
-        else -> R.style.Theme_WeaveMagisk_WebUI_System
+        1, 4 -> R.style.Theme_MaskSu_WebUI_Light
+        2, 5 -> R.style.Theme_MaskSu_WebUI_Dark
+        else -> R.style.Theme_MaskSu_WebUI_System
     }
 }
 

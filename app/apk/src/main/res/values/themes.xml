@@ -25,22 +25,22 @@
 
     <style name="ThemeOverlay.Foundation.Dialog" parent="Base.V23.ThemeOverlay.Foundation.Dialog" />
 
-    <style name="Theme.WeaveMagisk.WebUI" parent="Theme.WeaveMagisk.WebUI.System" />
+    <style name="Theme.MaskSu.WebUI" parent="Theme.MaskSu.WebUI.System" />
 
-    <style name="Theme.WeaveMagisk.WebUI.System" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.MaskSu.WebUI.System" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
     </style>
 
-    <style name="Theme.WeaveMagisk.WebUI.Light" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.MaskSu.WebUI.Light" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.WeaveMagisk.WebUI.Dark" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="Theme.MaskSu.WebUI.Dark" parent="Theme.MaterialComponents.NoActionBar">
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
     </style>
 
@@ -49,6 +49,6 @@
         用于冷启动时立即显示应用背景色，避免白屏闪烁。
         postSplashScreenTheme 在 API 31+ 由 values-v31/themes.xml 重新定义。
     -->
-    <style name="Theme.WeaveMagisk.Splash" parent="Theme.WeaveMagisk.Splash.Default" />
+    <style name="Theme.MaskSu.Splash" parent="Theme.MaskSu.Splash.Default" />
 
 </resources>
