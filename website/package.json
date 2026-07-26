@@ -1,7 +1,7 @@
 {
-  "name": "WeaveMask_website",
+  "name": "MaskSu_website",
   "version": "1.0.0",
-  "description": "WeaveMask official website",
+  "description": "MaskSu official website",
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
