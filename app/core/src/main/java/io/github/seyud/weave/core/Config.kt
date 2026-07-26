@@ -139,7 +139,7 @@ object Config : PreferenceConfig, DBConfig {
 
         // home layout
         const val HOME_LAYOUT_CLASSIC = 0
-        const val HOME_LAYOUT_WEAVSK = 1
+        const val HOME_LAYOUT_MASKSU = 1
     }
 
     @JvmField var keepVerity = false

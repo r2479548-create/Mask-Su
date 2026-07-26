@@ -11,7 +11,7 @@
     <string name="denylist">DenyList</string>
 
     <!--Home-->
-    <string name="magisk">Magisk</string>
+    <string name="magisk">MaskSu</string>
     <string name="zygisk">Zygisk</string>
     <string name="no_connection">No connection available</string>
     <string name="app_changelog">Changelog</string>
@@ -25,8 +25,8 @@
     <string name="home_status_disabled">No</string>
     <string name="home_status_supported">Yes</string>
     <string name="home_status_unsupported">No</string>
-    <string name="home_uninstall_weavemask">Uninstall WeaveMask</string>
-    <string name="home_notice_content">Download Magisk ONLY from the official GitHub page. Files from unknown sources can be malicious!</string>
+    <string name="home_uninstall_weavemask">Uninstall MaskSu</string>
+    <string name="home_notice_content">Download MaskSu ONLY from the official GitHub page. Files from unknown sources can be malicious!</string>
     <string name="home_support_title">Support Us</string>
     <string name="home_follow_title">Follow Us</string>
     <string name="about_page_title">About</string>
@@ -36,7 +36,7 @@
     <string name="about_join_telegram">Join our Telegram channel</string>
     <string name="about_join_qq">Join our QQ group</string>
     <string name="home_item_source">Source</string>
-    <string name="home_support_content">Magisk is, and always will be, free, and open source. However, you can show us that you care by making a donation.</string>
+    <string name="home_support_content">MaskSu is, and always will be, free, and open source. However, you can show us that you care by making a donation.</string>
     <string name="home_installed_version">Installed</string>
     <string name="home_latest_version">Latest</string>
     <string name="home_manager_version">Manager version</string>
@@ -45,8 +45,8 @@
     <string name="home_zygisk_implementation">Zygisk implementation</string>
     <string name="home_ramdisk_feature">Ramdisk feature</string>
     <string name="invalid_update_channel">Invalid update channel</string>
-    <string name="uninstall_magisk_title">Uninstall Magisk</string>
-    <string name="uninstall_magisk_msg">All modules will be disabled/removed!\nRoot will be removed!\nAny internal storage unencrypted through the use of Magisk will be re-encrypted!</string>
+    <string name="uninstall_magisk_title">Uninstall MaskSu</string>
+    <string name="uninstall_magisk_msg">All modules will be disabled/removed!\nRoot will be removed!\nAny internal storage unencrypted through the use of MaskSu will be re-encrypted!</string>
 
     <!--Install-->
     <string name="keep_force_encryption">Preserve force encryption</string>
@@ -71,7 +71,7 @@
 
     <!--Superuser-->
     <string name="su_request_title">Superuser request</string>
-    <string name="touch_filtered_warning">Because an app is obscuring a Superuser request, Magisk can\'t verify your response.</string>
+    <string name="touch_filtered_warning">Because an app is obscuring a Superuser request, MaskSu can\'t verify your response.</string>
     <string name="deny">Deny</string>
     <string name="prompt">Prompt</string>
     <string name="restrict">Restrict</string>
@@ -107,7 +107,7 @@
 
     <!--Logs-->
     <string name="log_data_none">You\'re log-free. Try using your root apps more.</string>
-    <string name="log_data_magisk_none">Magisk logs are empty, that\'s weird.</string>
+    <string name="log_data_magisk_none">MaskSu logs are empty, that\'s weird.</string>
     <string name="menuSaveLog">Save log</string>
     <string name="menuClearLog">Clear log now</string>
     <string name="logs_cleared">Log successfully cleared</string>
@@ -184,7 +184,7 @@
     <string name="settings_home_layout">Home layout</string>
     <string name="settings_home_layout_summary">Choose the layout style used on the home page</string>
     <string name="settings_home_layout_classic">Classic</string>
-    <string name="settings_home_layout_weavsk">Weavsk</string>
+    <string name="settings_home_layout_weavsk">MaskSu</string>
     <string name="settings_key_color">Seed color</string>
     <string name="settings_key_color_summary">Choose seed color for Monet theme</string>
     <string name="settings_key_color_default">Default (Theme)</string>
@@ -205,9 +205,9 @@
     <string name="color_sakura">Sakura</string>
     <string name="settings_download_path_title">Download path</string>
     <string name="settings_download_path_message">Files will be saved to %1$s</string>
-    <string name="settings_hide_app_title">Hide the WeaveMask app</string>
+    <string name="settings_hide_app_title">Hide the MaskSu app</string>
     <string name="settings_hide_app_summary">Install a proxy app with a random package ID and custom app label</string>
-    <string name="settings_restore_app_title">Restore the WeaveMask app</string>
+    <string name="settings_restore_app_title">Restore the MaskSu app</string>
     <string name="settings_restore_app_summary">Unhide the app and restore the original APK</string>
     <string name="language">Language</string>
     <string name="app_language">App language</string>
@@ -222,9 +222,9 @@
     <string name="settings_update_debug">Debug</string>
     <string name="settings_update_custom">Custom</string>
     <string name="settings_update_custom_msg">Insert a custom channel URL</string>
-    <string name="settings_zygisk_summary">Run parts of Magisk in the Zygote daemon</string>
+    <string name="settings_zygisk_summary">Run parts of MaskSu in the Zygote daemon</string>
     <string name="settings_denylist_title">Enforce DenyList</string>
-    <string name="settings_denylist_summary">Processes on the denylist will have all Magisk modifications reverted</string>
+    <string name="settings_denylist_summary">Processes on the denylist will have all MaskSu modifications reverted</string>
     <string name="settings_denylist_config_title">Configure DenyList</string>
     <string name="settings_denylist_config_summary">Select the processes to be included on the denylist</string>
     <string name="settings_hosts_title">Systemless hosts</string>
@@ -270,7 +270,7 @@
     <string name="settings_random_name_title">Randomize output name</string>
     <string name="settings_random_name_description">Randomize the output file name of patched images and tar files to prevent detection</string>
     <string name="settings_app_icon_title">APP icon</string>
-    <string name="settings_app_icon_summary">Choose which launcher icon WeaveMask uses</string>
+    <string name="settings_app_icon_summary">Choose which launcher icon MaskSu uses</string>
     <string name="settings_app_icon_current">Monet</string>
     <string name="settings_app_icon_legacy_weave">Weave</string>
     <string name="settings_app_icon_legacy_mask">Mask</string>
@@ -290,13 +290,13 @@
     <string name="isolate_summary">Each root session will have its own isolated namespace</string>
 
     <!--Notifications-->
-    <string name="update_channel">Magisk updates</string>
+    <string name="update_channel">MaskSu updates</string>
     <string name="progress_channel">Progress notifications</string>
     <string name="updated_channel">Update complete</string>
     <string name="download_complete">Download complete</string>
     <string name="download_file_error">Error downloading file</string>
-    <string name="magisk_update_title">Magisk update available!</string>
-    <string name="updated_title">Magisk updated</string>
+    <string name="magisk_update_title">MaskSu update available!</string>
+    <string name="updated_title">MaskSu updated</string>
     <string name="updated_text">Tap to open app</string>
 
     <!--Toasts, Dialogs-->
@@ -336,7 +336,7 @@
     <string name="done">Done!</string>
     <string name="done_action">Done running action of %1$s</string>
     <string name="failure">Failed!</string>
-    <string name="hide_app_title">Hiding the WeaveMask app…</string>
+    <string name="hide_app_title">Hiding the MaskSu app…</string>
     <string name="open_link_failed_toast">No app found to open the link</string>
     <string name="complete_uninstall">Complete uninstall</string>
     <string name="restore_img">Restore images</string>
@@ -345,16 +345,16 @@
     <string name="restore_fail">Stock backup doesn\'t exist!</string>
     <string name="setup_fail">Setup failed</string>
     <string name="env_fix_title">Requires additional setup</string>
-    <string name="env_fix_msg">Your device needs additional setup for Magisk to work properly. Do you want to proceed and reboot?</string>
-    <string name="env_full_fix_msg">Your device needs reflash Magisk to work properly. Please reinstall Magisk within app, Recovery mode cannot get correct device info.</string>
+    <string name="env_fix_msg">Your device needs additional setup for MaskSu to work properly. Do you want to proceed and reboot?</string>
+    <string name="env_full_fix_msg">Your device needs reflash MaskSu to work properly. Please reinstall MaskSu within app, Recovery mode cannot get correct device info.</string>
     <string name="setup_msg">Running environment setup…</string>
-    <string name="unsupport_magisk_title">Unsupported Magisk version</string>
-    <string name="unsupport_magisk_msg">This version of the app doesn\'t support Magisk versions lower than %1$s.\n\nThe app will behave as if no Magisk is installed. Please update Magisk as soon as possible.</string>
+    <string name="unsupport_magisk_title">Unsupported MaskSu version</string>
+    <string name="unsupport_magisk_msg">This version of the app doesn\'t support MaskSu versions lower than %1$s.\n\nThe app will behave as if no MaskSu is installed. Please update MaskSu as soon as possible.</string>
     <string name="unsupport_general_title">Abnormal state</string>
     <string name="unsupport_system_app_msg">Running this app as a system app isn\'t supported. Please revert the app to a user app.</string>
-    <string name="unsupport_other_su_msg">A \"su\" binary not from Magisk has been detected. Please remove any competing root solution and/or reinstall Magisk.</string>
-    <string name="unsupport_external_storage_msg">Magisk is installed to external storage. Please move the app to internal storage.</string>
-    <string name="unsupport_nonroot_stub_msg">The hidden WeaveMask app cannot continue to work because root was lost. Please restore the original APK.</string>
+    <string name="unsupport_other_su_msg">A \"su\" binary not from MaskSu has been detected. Please remove any competing root solution and/or reinstall MaskSu.</string>
+    <string name="unsupport_external_storage_msg">MaskSu is installed to external storage. Please move the app to internal storage.</string>
+    <string name="unsupport_nonroot_stub_msg">The hidden MaskSu app cannot continue to work because root was lost. Please restore the original APK.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">Grant storage permission to enable this functionality</string>
     <string name="post_notifications_denied">Grant notifications permission to enable this functionality</string>

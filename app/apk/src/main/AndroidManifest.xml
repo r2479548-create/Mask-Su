@@ -20,7 +20,7 @@
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.WeaveMagisk.Splash"
+            android:theme="@style/Theme.MaskSu.Splash"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
@@ -41,7 +41,7 @@
             android:icon="@mipmap/ic_launcher"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:targetActivity=".ui.MainActivity"
-            android:theme="@style/Theme.WeaveMagisk.Splash">
+            android:theme="@style/Theme.MaskSu.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -55,7 +55,7 @@
             android:icon="@mipmap/ic_launcher_legacy_weave_icon"
             android:roundIcon="@mipmap/ic_launcher_legacy_weave_icon"
             android:targetActivity=".ui.MainActivity"
-            android:theme="@style/Theme.WeaveMagisk.Splash">
+            android:theme="@style/Theme.MaskSu.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -69,7 +69,7 @@
             android:icon="@mipmap/ic_launcher_legacy_mask_icon"
             android:roundIcon="@mipmap/ic_launcher_legacy_mask_icon"
             android:targetActivity=".ui.MainActivity"
-            android:theme="@style/Theme.WeaveMagisk.Splash">
+            android:theme="@style/Theme.MaskSu.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -80,7 +80,7 @@
             android:name=".ui.webui.WebUIActivity"
             android:configChanges="density|orientation|screenSize|screenLayout|smallestScreenSize|uiMode|locale|layoutDirection|fontScale|keyboard|keyboardHidden"
             android:exported="false"
-            android:theme="@style/Theme.WeaveMagisk.WebUI" />
+            android:theme="@style/Theme.MaskSu.WebUI" />
 
         <activity
             android:name=".ui.surequest.SuRequestActivity"

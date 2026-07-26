@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.WeaveMagisk.Splash.LightBase" parent="Theme.SplashScreen">
+    <style name="Theme.MaskSu.Splash.LightBase" parent="Theme.SplashScreen">
         <item name="windowSplashScreenAnimatedIcon">?attr/splashScreenCenterIcon</item>
         <item name="windowSplashScreenBackground">?attr/splashScreenWindowBackgroundColor</item>
-        <item name="postSplashScreenTheme">@style/Theme.WeaveMagisk.Host.Light</item>
-        <item name="splashScreenCenterIcon">@drawable/ic_splash_weavemask_inset</item>
+        <item name="postSplashScreenTheme">@style/Theme.MaskSu.Host.Light</item>
+        <item name="splashScreenCenterIcon">@drawable/ic_splash_masksu_inset</item>
     </style>
 
-    <style name="Theme.WeaveMagisk.Splash.DarkBase" parent="Theme.SplashScreen">
+    <style name="Theme.MaskSu.Splash.DarkBase" parent="Theme.SplashScreen">
         <item name="windowSplashScreenAnimatedIcon">?attr/splashScreenCenterIcon</item>
         <item name="windowSplashScreenBackground">?attr/splashScreenWindowBackgroundColor</item>
-        <item name="postSplashScreenTheme">@style/Theme.WeaveMagisk.Host.Dark</item>
-        <item name="splashScreenCenterIcon">@drawable/ic_splash_weavemask_inset</item>
+        <item name="postSplashScreenTheme">@style/Theme.MaskSu.Host.Dark</item>
+        <item name="splashScreenCenterIcon">@drawable/ic_splash_masksu_inset</item>
     </style>
 
-    <style name="Theme.WeaveMagisk.Splash.MonetSystem.Light" parent="Theme.WeaveMagisk.Splash.LightBase">
+    <style name="Theme.MaskSu.Splash.MonetSystem.Light" parent="Theme.MaskSu.Splash.LightBase">
         <item name="splashScreenWindowBackgroundColor">@android:color/system_accent2_100</item>
         <item name="splashScreenIconTint">@android:color/system_accent2_900</item>
     </style>
 
-    <style name="Theme.WeaveMagisk.Splash.MonetSystem.Dark" parent="Theme.WeaveMagisk.Splash.DarkBase">
+    <style name="Theme.MaskSu.Splash.MonetSystem.Dark" parent="Theme.MaskSu.Splash.DarkBase">
         <item name="splashScreenWindowBackgroundColor">@android:color/system_accent2_700</item>
         <item name="splashScreenIconTint">@android:color/system_accent2_100</item>
     </style>
 
-    <style name="Theme.WeaveMagisk.Splash.MonetSystem" parent="Theme.WeaveMagisk.Splash.MonetSystem.Light" />
+    <style name="Theme.MaskSu.Splash.MonetSystem" parent="Theme.MaskSu.Splash.MonetSystem.Light" />
 
 </resources>

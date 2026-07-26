@@ -1,32 +1,32 @@
 English | [简体中文](README_CN.md)
 
-# WeaveMask
+# MaskSu
 
 ![](docs/images/logo.png)
 
-A Magisk fork with Miuix UI and enhanced features.
+A powerful root solution with Miuix UI and enhanced features.
 
 ## Features
 
-- **MagiskSU**: Provide root access for applications
-- **Magisk Modules**: Modify read-only partitions by installing modules
-- **MagiskBoot**: The most complete tool for unpacking and repacking Android boot images
+- **MaskSU**: Provide root access for applications
+- **Mask Modules**: Modify read-only partitions by installing modules
+- **MaskBoot**: The most complete tool for unpacking and repacking Android boot images
 - **Zygisk**: Run code in every Android applications' processes
 - **Whitelist Mode**: Automatically adds all non-system apps to DenyList; only explicitly granted apps can access root. Bidirectional sync with Zygisk Next.
 - **Module Repository**: Built-in browsing of the [KernelSU module repository](https://modules.kernelsu.org)
 - **WebUI**: Supports module web interfaces with Monet color integration
-- **Customization**: 6 theme modes, Monet color picking, dual home layouts (Classic / Weavsk), blur effects, floating bottom bar, page scaling, multi-icon support
+- **Customization**: 6 theme modes, Monet color picking, dual home layouts (Classic / MaskSu), blur effects, floating bottom bar, page scaling, multi-icon support
 
 ## Downloads
 
-- [GitHub Releases](https://github.com/Seyud/WeaveMask/releases)
-- [Telegram Channel](https://t.me/WeaveMask)
+- [GitHub Releases](https://github.com/Seyud/MaskSu/releases)
+- [Telegram Channel](https://t.me/MaskSu)
 
 ## Useful Links
 
-- [Installation Instruction](https://seyud.github.io/WeaveMask/install.html)
-- [Building and Development](https://seyud.github.io/WeaveMask/build.html)
-- [WeaveMask Documentation](https://seyud.github.io/WeaveMask/)
+- [Installation Instruction](https://seyud.github.io/MaskSu/install.html)
+- [Building and Development](https://seyud.github.io/MaskSu/build.html)
+- [MaskSu Documentation](https://seyud.github.io/MaskSu/)
 - [Zygisk module sample](https://github.com/topjohnwu/zygisk-module-sample)
 
 ## Bug Reports
@@ -34,14 +34,14 @@ A Magisk fork with Miuix UI and enhanced features.
 **Only bug reports from Debug builds will be accepted.**
 
 For installation issues, upload both boot image and install logs.<br>
-For WeaveMask issues, upload boot logcat or dmesg.<br>
-For WeaveMask app crashes, record and upload the logcat when the crash occurs.
+For MaskSu issues, upload boot logcat or dmesg.<br>
+For MaskSu app crashes, record and upload the logcat when the crash occurs.
 
-Please report issues at [GitHub Issues](https://github.com/Seyud/WeaveMask/issues).
+Please report issues at [GitHub Issues](https://github.com/Seyud/MaskSu/issues).
 
 ## Translation Contributions
 
-Default string resources for the WeaveMask app and its stub APK are located here:
+Default string resources for the MaskSu app and its stub APK are located here:
 
 - `app/core/src/main/res/values/strings.xml`
 - `app/stub-res/src/main/res/values/strings.xml`
@@ -57,7 +57,7 @@ Translate each and place them in the respective locations (`[module]/src/main/re
 
 ## License
 
-    WeaveMask, including all git submodules are free software:
+    MaskSu, including all git submodules are free software:
     you can redistribute it and/or modify it under the terms of the
     GNU General Public License as published by the Free Software Foundation,
     either version 3 of the License, or (at your option) any later version.

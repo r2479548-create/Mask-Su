@@ -197,11 +197,11 @@ private fun AboutScreenLegacy(
                     ArrowPreference(
                         title = stringResource(CoreR.string.about_view_source_code),
                         summary = stringResource(CoreR.string.about_view_source_code_summary),
-                        onClick = { onLinkPressed("https://github.com/Seyud/WeaveMask") }
+                        onClick = { onLinkPressed("https://github.com/Seyud/MaskSu") }
                     )
                     ArrowPreference(
                         title = stringResource(CoreR.string.about_join_telegram),
-                        onClick = { onLinkPressed("tg://resolve?domain=WeaveMask") }
+                        onClick = { onLinkPressed("tg://resolve?domain=MaskSu") }
                     )
                     ArrowPreference(
                         title = stringResource(CoreR.string.about_join_qq),
@@ -552,11 +552,11 @@ private fun AboutContentBody(
                         ArrowPreference(
                             title = stringResource(CoreR.string.about_view_source_code),
                             summary = stringResource(CoreR.string.about_view_source_code_summary),
-                            onClick = { onLinkPressed("https://github.com/Seyud/WeaveMask") }
+                            onClick = { onLinkPressed("https://github.com/Seyud/MaskSu") }
                         )
                         ArrowPreference(
                             title = stringResource(CoreR.string.about_join_telegram),
-                            onClick = { onLinkPressed("tg://resolve?domain=WeaveMask") }
+                            onClick = { onLinkPressed("tg://resolve?domain=MaskSu") }
                         )
                         ArrowPreference(
                             title = stringResource(CoreR.string.about_join_qq),

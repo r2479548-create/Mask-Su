@@ -26,7 +26,7 @@ import io.github.seyud.weave.core.di.ServiceLocator
 import io.github.seyud.weave.core.su.SuCallbackHandler
 import io.github.seyud.weave.core.su.SuCallbackHandler.REQUEST
 import io.github.seyud.weave.dialog.SuRequestDialog
-import io.github.seyud.weave.ui.theme.WeaveMagiskTheme
+import io.github.seyud.weave.ui.theme.MaskSuTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -87,7 +87,7 @@ class SuRequestActivity : ComponentActivity(), UntrackedActivity, IActivityExten
             val keyColorInt = Config.keyColor
             val keyColor = if (keyColorInt == 0) null else Color(keyColorInt)
 
-            WeaveMagiskTheme(
+            MaskSuTheme(
                 colorMode = colorMode,
                 keyColor = keyColor,
             ) {

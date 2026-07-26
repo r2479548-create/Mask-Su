@@ -1,5 +1,5 @@
-name: WeaveMask Setup
-description: Set up the build environment for WeaveMask
+name: MaskSu Setup
+description: Set up the build environment for MaskSu
 inputs:
   is-asset-build:
     required: false

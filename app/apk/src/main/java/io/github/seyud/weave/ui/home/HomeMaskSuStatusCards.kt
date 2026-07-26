@@ -39,7 +39,7 @@ import top.yukonga.miuix.kmp.utils.TiltFeedback
 import top.yukonga.miuix.kmp.utils.pressable
 
 @Composable
-internal fun WeavskMagiskCard(
+internal fun MaskSuCard(
     magiskState: HomeViewModel.State,
     installedVersion: String,
     expanded: Boolean,
@@ -98,7 +98,7 @@ internal fun WeavskMagiskCard(
 
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
-                        text = "Weave",
+                        text = "MaskSu",
                         style = MiuixTheme.textStyles.title3,
                         color = contentColor,
                         maxLines = 1,
@@ -154,7 +154,7 @@ internal fun WeavskMagiskCard(
 }
 
 @Composable
-internal fun WeavskStatusCard(
+internal fun MaskSuStatusCard(
     appState: HomeViewModel.State,
     installedVersion: String,
     packageName: String,
@@ -180,7 +180,7 @@ internal fun WeavskStatusCard(
                 .padding(16.dp)
         ) {
             Column(modifier = Modifier.fillMaxWidth()) {
-                WeavskStatusItem(
+                MaskSuStatusItem(
                     title = context.getString(CoreR.string.home_zygisk_implementation),
                     content = context.getString(
                         if (io.github.seyud.weave.core.Info.isZygiskEnabled) {
@@ -191,7 +191,7 @@ internal fun WeavskStatusCard(
                     ),
                     bottomPadding = 24.dp
                 )
-                WeavskStatusItem(
+                MaskSuStatusItem(
                     title = context.getString(CoreR.string.home_ramdisk_feature),
                     content = context.getString(
                         if (io.github.seyud.weave.core.Info.ramdisk) {
@@ -202,17 +202,17 @@ internal fun WeavskStatusCard(
                     ),
                     bottomPadding = 24.dp
                 )
-                WeavskStatusItem(
+                MaskSuStatusItem(
                     title = context.getString(CoreR.string.home_manager_version),
                     content = installedVersion,
                     bottomPadding = 24.dp
                 )
-                WeavskStatusItem(
+                MaskSuStatusItem(
                     title = context.getString(CoreR.string.home_manager_package),
                     content = packageName,
                     bottomPadding = 24.dp
                 )
-                WeavskStatusItem(
+                MaskSuStatusItem(
                     title = context.getString(CoreR.string.home_system_version),
                     content = systemVersion,
                     bottomPadding = 0.dp
@@ -231,7 +231,7 @@ internal fun WeavskStatusCard(
 }
 
 @Composable
-private fun WeavskStatusItem(
+private fun MaskSuStatusItem(
     title: String,
     content: String,
     bottomPadding: Dp,

@@ -42,7 +42,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class DownloadActivity extends Activity {
 
-    private static final String APP_NAME = "WeaveMask";
+    private static final String APP_NAME = "MaskSu";
     private static final String RES_PKG_NAME = "io.github.seyud.weave";
     private static final ExecutorService DOWNLOAD_EXECUTOR = Executors.newCachedThreadPool();
 

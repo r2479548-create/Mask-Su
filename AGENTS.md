@@ -1,6 +1,6 @@
-# WeaveMask — Agent Guide
+# MaskSu — Agent Guide
 
-A Magisk fork with Miuix UI (Jetpack Compose). Native (C++/Rust) + Android app (Kotlin/Compose).
+A powerful root solution with Miuix UI (Jetpack Compose). Native (C++/Rust) + Android app (Kotlin/Compose).
 
 ## Build Commands
 
@@ -70,7 +70,7 @@ Version config: `app/gradle.properties` (`magisk.versionCode`, `magisk.stubVersi
 - Navigation3 with custom type-safe `Navigator` and spring-physics transitions
 - Miuix component library (not standard Material3)
 - Liquid Glass effects: `CombinedBackdrop`, `InnerShadow`, `Lens`, `Vibrancy`
-- Dual home layouts: Classic and Weavsk, switchable in settings
+- Dual home layouts: Classic and MaskSu, switchable in settings
 
 ## Config
 

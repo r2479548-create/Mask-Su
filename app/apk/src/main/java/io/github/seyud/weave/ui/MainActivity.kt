@@ -84,7 +84,7 @@ import io.github.seyud.weave.ui.theme.LocalEnableBlur
 import io.github.seyud.weave.ui.theme.LocalEnableFloatingBottomBar
 import io.github.seyud.weave.ui.theme.LocalEnableFloatingBottomBarBlur
 import io.github.seyud.weave.ui.theme.LocalHomeLayoutMode
-import io.github.seyud.weave.ui.theme.WeaveMagiskTheme
+import io.github.seyud.weave.ui.theme.MaskSuTheme
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -317,7 +317,7 @@ class MainActivity : ComponentActivity(), IActivityExtension, ViewModelHolder, W
                 )
 
                 // 根 Scaffold 用于承载 overlay 弹层组件，使 OverlayDialog 等组件正确渲染
-                WeaveMagiskTheme(
+                MaskSuTheme(
                     colorMode = colorMode,
                     keyColor = keyColor,
                 ) {

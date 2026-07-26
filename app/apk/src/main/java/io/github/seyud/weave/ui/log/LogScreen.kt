@@ -102,7 +102,7 @@ fun LogScreen(
     val coroutineScope = rememberCoroutineScope()
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
     val tabTitles = listOf(
-        "WeaveMask",
+        "MaskSu",
         context.getString(CoreR.string.superuser),
     )
 

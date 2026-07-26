@@ -22,7 +22,7 @@ import androidx.compose.ui.graphics.Color
 import io.github.seyud.weave.R
 import io.github.seyud.weave.core.Config
 import io.github.seyud.weave.core.isRunningAsStub
-import io.github.seyud.weave.ui.theme.WeaveMagiskTheme
+import io.github.seyud.weave.ui.theme.MaskSuTheme
 import top.yukonga.miuix.kmp.basic.InfiniteProgressIndicator
 
 @SuppressLint("SetJavaScriptEnabled")
@@ -51,7 +51,7 @@ class WebUIActivity : ComponentActivity() {
             val keyColorInt = Config.keyColor
             val keyColor = if (keyColorInt == 0) null else Color(keyColorInt)
 
-            WeaveMagiskTheme(
+            MaskSuTheme(
                 colorMode = colorMode,
                 keyColor = keyColor,
             ) {

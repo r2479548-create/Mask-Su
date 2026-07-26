@@ -1,4 +1,4 @@
-# WeaveMask Changelog
+# MaskSu Changelog
 
 ### v30.7.5
 
@@ -29,7 +29,7 @@
 - Integrate WebUI theme injection via `MonetColorsProvider` — module WebUIs follow app's Monet color scheme
 - Add download-and-patch install method for boot image patching
 - Support opening `.zip` files from external apps via intent filter
-- Rebrand to WeaveMask with custom package name `io.github.seyud.weave`
+- Rebrand to MaskSu with custom package name `io.github.seyud.weave`
 - Replace all Rikka UI dependencies with Miuix components
 - Replace KAPT annotation processing with Kotlin Serialization and Compose compiler plugins
 - Migrate `buildSrc` to `build-logic` composite build

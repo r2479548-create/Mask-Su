@@ -44,12 +44,12 @@ set_version() {
 
   sed -i "s:versionCode=.*:versionCode=${code}:g" $GCONFIG
   sed -i "s:version=.*:version=${ver}:g" $CONFIG
-  sed -i "1s:.*:## $(date +'%Y.%-m.%-d') WeaveMask v$ver:" $NOTES
+  sed -i "1s:.*:## $(date +'%Y.%-m.%-d') MaskSu v$ver:" $NOTES
 
   # Commit version code changes
   git add -u .
   git status
-  git commit -m "Release WeaveMask v$ver" -m "[skip ci]"
+  git commit -m "Release MaskSu v$ver" -m "[skip ci]"
 }
 
 # $1 = ver
@@ -69,7 +69,7 @@ upload() {
   local code=$(grep_prop magisk.versionCode $GCONFIG)
   local ver=$(awk "BEGIN{ c=$code*10; printf \"%d.%d.%d\", c/10000, c/1000%10, c/100%10 }")
   local tag="v$ver"
-  local title="WeaveMask v$ver"
+  local title="MaskSu v$ver"
 
   local out=$(grep_prop outdir $CONFIG)
   if [ -z $out ]; then
@@ -84,7 +84,7 @@ upload() {
   tail -n +3 $NOTES > release.md
 
   # Publish release
-  local release_apk="WeaveMask-v${ver}.apk"
+  local release_apk="MaskSu-v${ver}.apk"
   cp $out/app-release.apk $release_apk
   gh release create --verify-tag $tag -p -t "$title" -F release.md $release_apk $out/app-debug.apk $NOTES
 

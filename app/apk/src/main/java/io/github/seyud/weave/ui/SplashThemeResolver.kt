@@ -55,10 +55,10 @@ internal object SplashThemeResolver {
 
     fun resolveThemeRes(spec: Spec): Int {
         return when (spec.kind) {
-            Kind.DEFAULT -> R.style.Theme_WeaveMagisk_Splash_Default
-            Kind.MONET_SYSTEM -> R.style.Theme_WeaveMagisk_Splash_MonetSystem
+            Kind.DEFAULT -> R.style.Theme_MaskSu_Splash_Default
+            Kind.MONET_SYSTEM -> R.style.Theme_MaskSu_Splash_MonetSystem
             Kind.MONET_PRESET -> MonetPresetPalette.splashThemeResFor(spec.keyColor)
-                ?: R.style.Theme_WeaveMagisk_Splash_Default
+                ?: R.style.Theme_MaskSu_Splash_Default
         }
     }
 

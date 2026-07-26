@@ -69,7 +69,7 @@ fun HomeScreen(
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
     val homeLayoutMode = LocalHomeLayoutMode.current
-    val isWeavskHome = homeLayoutMode == Config.Value.HOME_LAYOUT_WEAVSK
+    val isMaskSuHome = homeLayoutMode == Config.Value.HOME_LAYOUT_MASKSU
     var hasStartedLoading by rememberSaveable { mutableStateOf(false) }
     var isMagiskCardExpanded by rememberSaveable { mutableStateOf(false) }
     var isManagerCardExpanded by rememberSaveable { mutableStateOf(false) }
@@ -186,8 +186,8 @@ fun HomeScreen(
                     }
                 }
 
-                if (isWeavskHome) {
-                    weavskHomeContent(
+                if (isMaskSuHome) {
+                    masksuHomeContent(
                         viewModel = viewModel,
                         magiskInstalledVersion = viewModel.magiskInstalledVersion.getText(context.resources),
                         isMagiskCardExpanded = isMagiskCardExpanded,

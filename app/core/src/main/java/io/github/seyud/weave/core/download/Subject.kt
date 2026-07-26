@@ -41,7 +41,7 @@ abstract class Subject : Parcelable {
         private val json: UpdateInfo = Info.update,
         override val notifyId: Int = AppNotifications.nextId()
     ) : Subject() {
-        override val title: String get() = "WeaveMask-${json.version}(${json.versionCode})"
+        override val title: String get() = "MaskSu-${json.version}(${json.versionCode})"
         override val url: String get() = json.link
 
         @IgnoredOnParcel

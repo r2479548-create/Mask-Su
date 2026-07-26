@@ -9,7 +9,7 @@ import androidx.compose.ui.platform.LocalContext
 import io.github.seyud.weave.core.Info
 import io.github.seyud.weave.core.R as CoreR
 
-internal fun LazyListScope.weavskHomeContent(
+internal fun LazyListScope.masksuHomeContent(
     viewModel: HomeViewModel,
     magiskInstalledVersion: String,
     isMagiskCardExpanded: Boolean,
@@ -24,7 +24,7 @@ internal fun LazyListScope.weavskHomeContent(
     item {
         val context = LocalContext.current
         Column {
-            WeavskMagiskCard(
+            MaskSuCard(
                 magiskState = viewModel.magiskState,
                 installedVersion = magiskInstalledVersion,
                 expanded = isMagiskCardExpanded,
@@ -55,7 +55,7 @@ internal fun LazyListScope.weavskHomeContent(
     }
 
     item {
-        WeavskStatusCard(
+        MaskSuStatusCard(
             appState = viewModel.appState,
             installedVersion = viewModel.managerInstalledVersion,
             packageName = viewModel.managerPackageName,

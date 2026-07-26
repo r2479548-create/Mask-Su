@@ -16,7 +16,7 @@ val LocalHomeLayoutMode = staticCompositionLocalOf { 0 }
 val LocalIsMonetTheme = staticCompositionLocalOf { false }
 
 /**
- * WeaveMagisk 主题包装函数
+ * MaskSu 主题包装函数
  * 根据 colorMode 和 keyColor 创建 ThemeController 并应用 MiuixTheme
  *
  * colorMode 取值:
@@ -32,7 +32,7 @@ val LocalIsMonetTheme = staticCompositionLocalOf { false }
  * @param content 子组件
  */
 @Composable
-fun WeaveMagiskTheme(
+fun MaskSuTheme(
     colorMode: Int = 0,
     keyColor: Color? = null,
     content: @Composable () -> Unit

@@ -1,19 +1,19 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'WeaveMask',
-  base: '/WeaveMask/',
+  title: 'MaskSu',
+  base: '/MaskSu/',
   sitemap: {
-    hostname: 'https://weavemask.github.io'
+    hostname: 'https://masksu.github.io'
   },
   locales: {
     root: {
       label: 'English',
       lang: 'en-US',
-      description: 'A Magisk fork with enhanced features for Android.',
+      description: 'A powerful root solution with enhanced features for Android.',
       themeConfig: {
         nav: [
-          { text: 'Guide', link: '/guide/what-is-weavemask' }
+          { text: 'Guide', link: '/guide/what-is-masksu' }
         ],
         lastUpdatedText: 'Last updated',
         sidebar: {
@@ -21,7 +21,7 @@ export default defineConfig({
             {
               text: 'Guide',
               items: [
-                { text: 'What is WeaveMask?', link: '/guide/what-is-weavemask' },
+                { text: 'What is MaskSu?', link: '/guide/what-is-masksu' },
                 { text: 'Installation', link: '/guide/installation' },
                 { text: 'FAQ', link: '/guide/faq' },
                 { text: 'OTA Upgrade', link: '/guide/ota' },
@@ -42,14 +42,14 @@ export default defineConfig({
           ]
         },
         socialLinks: [
-          { icon: 'github', link: 'https://github.com/Seyud/WeaveMask' }
+          { icon: 'github', link: 'https://github.com/Seyud/MaskSu' }
         ],
         footer: {
           message: 'Released under the GPL3 License.',
-          copyright: 'Copyright © 2024-present WeaveMask developers.'
+          copyright: 'Copyright © 2024-present MaskSu developers.'
         },
         editLink: {
-          pattern: 'https://github.com/Seyud/WeaveMask/edit/main/website/docs/:path',
+          pattern: 'https://github.com/Seyud/MaskSu/edit/main/website/docs/:path',
           text: 'Edit this page on GitHub'
         }
       }
@@ -57,10 +57,10 @@ export default defineConfig({
     zh_CN: {
       label: '简体中文',
       lang: 'zh-CN',
-      description: '一个增强版的 Magisk 分支，适用于 Android。',
+      description: '一个功能增强的 Android Root 解决方案。',
       themeConfig: {
         nav: [
-          { text: '指南', link: '/zh_CN/guide/what-is-weavemask' }
+          { text: '指南', link: '/zh_CN/guide/what-is-masksu' }
         ],
         lastUpdatedText: '最后更新',
         sidebar: {
@@ -68,7 +68,7 @@ export default defineConfig({
             {
               text: '指南',
               items: [
-                { text: '什么是 WeaveMask？', link: '/zh_CN/guide/what-is-weavemask' },
+                { text: '什么是 MaskSu？', link: '/zh_CN/guide/what-is-masksu' },
                 { text: '安装', link: '/zh_CN/guide/installation' },
                 { text: '常见问题', link: '/zh_CN/guide/faq' },
                 { text: 'OTA 升级', link: '/zh_CN/guide/ota' },
@@ -89,26 +89,26 @@ export default defineConfig({
           ]
         },
         socialLinks: [
-          { icon: 'github', link: 'https://github.com/Seyud/WeaveMask' }
+          { icon: 'github', link: 'https://github.com/Seyud/MaskSu' }
         ],
         footer: {
           message: '在 GPL3 许可证下发布。',
-          copyright: 'Copyright © 2024-现在 WeaveMask 开发者。'
+          copyright: 'Copyright © 2024-现在 MaskSu 开发者。'
         },
         editLink: {
-          pattern: 'https://github.com/Seyud/WeaveMask/edit/main/website/docs/:path',
+          pattern: 'https://github.com/Seyud/MaskSu/edit/main/website/docs/:path',
           text: '在 GitHub 中编辑本页'
         }
       }
     }
   },
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/WeaveMask/logo.png' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/MaskSu/logo.png' }],
     [
       'script',
       {},
       `;(() => {
-        const base = '/WeaveMask/'
+        const base = '/MaskSu/'
         const path = window.location.pathname
         if (path.startsWith(base + 'zh_CN/') || path === base + 'zh_CN') return
         if (path.startsWith(base + 'guide/') || path === base) {
