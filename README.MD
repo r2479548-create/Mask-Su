@@ -19,14 +19,14 @@ A powerful root solution with Miuix UI and enhanced features.
 
 ## Downloads
 
-- [GitHub Releases](https://github.com/Seyud/MaskSu/releases)
-- [Telegram Channel](https://t.me/MaskSu)
+- [GitHub Releases](https://github.com/r2479548-create/Mask-Su/releases)
+- [Telegram Channel](https://t.me/RoyelCheats)
 
 ## Useful Links
 
-- [Installation Instruction](https://seyud.github.io/MaskSu/install.html)
-- [Building and Development](https://seyud.github.io/MaskSu/build.html)
-- [MaskSu Documentation](https://seyud.github.io/MaskSu/)
+- [Installation Instruction](https://r2479548-create.github.io/Mask-Su/install.html)
+- [Building and Development](https://r2479548-create.github.io/Mask-Su/build.html)
+- [MaskSu Documentation](https://r2479548-create.github.io/Mask-Su/)
 - [Zygisk module sample](https://github.com/topjohnwu/zygisk-module-sample)
 
 ## Bug Reports
@@ -37,7 +37,7 @@ For installation issues, upload both boot image and install logs.<br>
 For MaskSu issues, upload boot logcat or dmesg.<br>
 For MaskSu app crashes, record and upload the logcat when the crash occurs.
 
-Please report issues at [GitHub Issues](https://github.com/Seyud/MaskSu/issues).
+Please report issues at [GitHub Issues](https://github.com/r2479548-create/Mask-Su/issues).
 
 ## Translation Contributions
 

@@ -195,13 +195,12 @@ private fun AboutScreenLegacy(
                         .padding(bottom = 12.dp)
                 ) {
                     ArrowPreference(
-                        title = stringResource(CoreR.string.about_view_source_code),
-                        summary = stringResource(CoreR.string.about_view_source_code_summary),
-                        onClick = { onLinkPressed("https://github.com/Seyud/MaskSu") }
+                        title = stringResource(CoreR.string.about_join_telegram),
+                        onClick = { onLinkPressed("https://t.me/RoyelCheats") }
                     )
                     ArrowPreference(
-                        title = stringResource(CoreR.string.about_join_telegram),
-                        onClick = { onLinkPressed("tg://resolve?domain=MaskSu") }
+                        title = "Join owner Telegram",
+                        onClick = { onLinkPressed("https://t.me/ERROR_MODZ_OWNER") }
                     )
                     ArrowPreference(
                         title = stringResource(CoreR.string.about_join_qq),
@@ -550,13 +549,12 @@ private fun AboutContentBody(
                         ),
                     ) {
                         ArrowPreference(
-                            title = stringResource(CoreR.string.about_view_source_code),
-                            summary = stringResource(CoreR.string.about_view_source_code_summary),
-                            onClick = { onLinkPressed("https://github.com/Seyud/MaskSu") }
+                            title = stringResource(CoreR.string.about_join_telegram),
+                            onClick = { onLinkPressed("https://t.me/RoyelCheats") }
                         )
                         ArrowPreference(
-                            title = stringResource(CoreR.string.about_join_telegram),
-                            onClick = { onLinkPressed("tg://resolve?domain=MaskSu") }
+                            title = "Join owner Telegram",
+                            onClick = { onLinkPressed("https://t.me/ERROR_MODZ_OWNER") }
                         )
                         ArrowPreference(
                             title = stringResource(CoreR.string.about_join_qq),

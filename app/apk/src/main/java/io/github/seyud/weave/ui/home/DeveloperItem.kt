@@ -39,48 +39,39 @@ sealed class DeveloperItem : Dev {
     object John : DeveloperItem(), JohnImpl {
         override val items =
             listOf(
-                object : IconLink.Twitter(), JohnImpl {},
-                IconLink.Github.Project
+                object : IconLink.Twitter(), JohnImpl {}
             )
     }
 
     object Vvb : DeveloperItem(), VvbImpl {
         override val items =
             listOf<IconLink>(
-                object : IconLink.Twitter(), VvbImpl {},
-                object : IconLink.Github.User(), VvbImpl {}
+                object : IconLink.Twitter(), VvbImpl {}
             )
     }
 
     object YU : DeveloperItem(), YUImpl {
         override val items =
             listOf<IconLink>(
-                object : IconLink.Twitter() { override val name = "shanasaimoe" },
-                object : IconLink.Github.User(), YUImpl {},
-                object : IconLink.Sponsor(), YUImpl {}
+                object : IconLink.Twitter() { override val name = "shanasaimoe" }
             )
     }
 
     object Seyud : DeveloperItem(), SeyudImpl {
-        override val items =
-            listOf<IconLink>(
-                object : IconLink.Github.User(), SeyudImpl {}
-            )
+        override val items = emptyList<IconLink>()
     }
 
     object Rikka : DeveloperItem(), RikkaImpl {
         override val items =
             listOf<IconLink>(
-                object : IconLink.Twitter() { override val name = "rikkawww" },
-                object : IconLink.Github.User(), RikkaImpl {}
+                object : IconLink.Twitter() { override val name = "rikkawww" }
             )
     }
 
     object Canyie : DeveloperItem(), CanyieImpl {
         override val items =
             listOf<IconLink>(
-                object : IconLink.Twitter() { override val name = "canyie2977" },
-                object : IconLink.Github.User(), CanyieImpl {}
+                object : IconLink.Twitter() { override val name = "canyie2977" }
             )
     }
 }

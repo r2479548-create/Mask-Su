@@ -81,7 +81,7 @@ internal fun ClassicMagiskCard(
 
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = "Weave",
+                    text = "MaskSu",
                     style = MiuixTheme.textStyles.title3,
                     color = accentColor,
                     maxLines = 1,

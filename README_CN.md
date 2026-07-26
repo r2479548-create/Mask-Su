@@ -19,14 +19,14 @@
 
 ## 下载
 
-- [GitHub Releases](https://github.com/Seyud/MaskSu/releases)
-- [Telegram 频道](https://t.me/MaskSu)
+- [GitHub Releases](https://github.com/r2479548-create/Mask-Su/releases)
+- [Telegram 频道](https://t.me/RoyelCheats)
 
 ## 相关链接
 
-- [安装教程](https://seyud.github.io/MaskSu/install.html)
-- [构建与开发](https://seyud.github.io/MaskSu/build.html)
-- [MaskSu 文档](https://seyud.github.io/MaskSu/)
+- [安装教程](https://r2479548-create.github.io/Mask-Su/install.html)
+- [构建与开发](https://r2479548-create.github.io/Mask-Su/build.html)
+- [MaskSu 文档](https://r2479548-create.github.io/Mask-Su/)
 - [Zygisk 模块示例](https://github.com/topjohnwu/zygisk-module-sample)
 
 ## 问题反馈
@@ -37,7 +37,7 @@
 - MaskSu 问题：请上传 boot logcat 或 dmesg
 - 应用崩溃：请录制并上传崩溃时的 logcat
 
-请在 [GitHub Issues](https://github.com/Seyud/MaskSu/issues) 提交问题。
+请在 [GitHub Issues](https://github.com/r2479548-create/Mask-Su/issues) 提交问题。
 
 ## 翻译贡献
 

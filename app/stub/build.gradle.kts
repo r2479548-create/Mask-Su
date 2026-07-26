@@ -14,7 +14,7 @@ android {
     enableKotlin = false
 
     val canary = !Config.version.contains(".")
-    val base = "https://github.com/Seyud/MaskSu/releases/download/"
+    val base = "https://github.com/r2479548-create/Mask-Su/releases/download/"
     val url = base + "v${Config.version}/app-release.apk"
     val canaryUrl = base + "canary-${Config.versionCode}/"
 
