@@ -8,13 +8,13 @@ runs:
   using: "composite"
   steps:
     - name: Set up JDK 21
-      uses: actions/setup-java@v5
+      uses: actions/setup-java@v4
       with:
         distribution: "temurin"
         java-version: "21"
 
     - name: Set up Python 3
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@v5
       with:
         python-version: "3.x"
 
@@ -26,7 +26,7 @@ runs:
         echo 'GNUMAKE=gmake' >> "$GITHUB_ENV"
 
     - name: Cache sccache
-      uses: actions/cache@v5
+      uses: actions/cache@v4
       if: ${{ github.event_name != 'pull_request' }}
       with:
         path: .sccache
@@ -64,7 +64,7 @@ runs:
       run: echo "GRADLE_USER_HOME=$GITHUB_WORKSPACE/.gradle" >> "$GITHUB_ENV"
 
     - name: Cache Gradle dependencies
-      uses: actions/cache@v5
+      uses: actions/cache@v4
       if: ${{ inputs.is-asset-build == 'true' && github.event_name != 'pull_request' }}
       with:
         path: |
@@ -88,7 +88,7 @@ runs:
         enableCrossOsArchive: true
 
     - name: Cache Gradle build cache
-      uses: actions/cache@v5
+      uses: actions/cache@v4
       if: ${{ inputs.is-asset-build == 'true' && github.event_name != 'pull_request' }}
       with:
         path: .gradle/caches/build-cache-*
