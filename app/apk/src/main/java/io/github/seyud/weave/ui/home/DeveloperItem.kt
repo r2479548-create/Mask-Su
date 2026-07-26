@@ -37,7 +37,7 @@ sealed class DeveloperItem : Dev {
     val handle get() = "@${name}"
 
     object John : DeveloperItem(), JohnImpl {
-        override val items =
+        override val items: List<IconLink> =
             listOf(
                 object : IconLink.Twitter(), JohnImpl {}
             )
