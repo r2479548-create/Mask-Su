@@ -43,7 +43,7 @@ internal fun ClassicMagiskCard(
     val accentColor = if (isMonetTheme) {
         MiuixTheme.colorScheme.primary
     } else {
-        colorResource(id = CoreR.color.weave_brand_main)
+        colorResource(id = CoreR.color.masksu_brand_main)
     }
     val cardState = MagiskCardState.remember(magiskState, expanded)
 
@@ -72,7 +72,7 @@ internal fun ClassicMagiskCard(
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            WeaveCardIcon(
+            MaskSuCardIcon(
                 isMonetTheme = isMonetTheme,
                 modifier = Modifier.size(56.dp)
             )

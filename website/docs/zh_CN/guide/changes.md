@@ -1,17 +1,17 @@
-# WeaveMask 更新日志
+# MaskSu 更新日志
 
 ### v30.7.5 (2026.5.25)
 
 - [App] 将 UI 从 Views/XML/Fragments 完全重写为 Jetpack Compose + Miuix 组件库
 - [App] 将导航系统从 Fragment Navigation Component 迁移至 Navigation3，支持类型安全的自定义 `Navigator` 和弹簧物理过渡动画
 - [App] 新增 6 种主题颜色模式（跟随系统、浅色、深色、Monet 跟随系统、Monet 浅色、Monet 深色）及 16 种预设主色调
-- [App] 新增双主页布局，可在经典和 Weavsk 模式之间切换
+- [App] 新增双主页布局，可在经典和 MaskSu 模式之间切换
 - [App] 重新设计关于页面，支持动态着色器背景、视差滚动动画和 Miuix 模糊混合效果
 - [App] 新增 Liquid Glass 视觉效果，支持模糊背景、内阴影和振动合成
 - [App] 新增浮动底栏，支持 Liquid Glass 模糊开关
 - [App] 新增页面缩放滑块（80%–110%），支持自定义显示大小
 - [App] 新增独立的应用语言选择页面
-- [App] 新增应用图标切换器，支持当前图标、Legacy Weave、Legacy Mask 三种变体
+- [App] 新增应用图标切换器，支持当前图标、Legacy MaskSu、Legacy Mask 三种变体
 - [App] 新增 Android 14+ 预测性返回手势开关
 - [App] 集成 WebUI 主题注入 — 模块 WebUI 现在通过 CSS 自定义属性跟随应用的 Monet 配色方案
 - [Superuser] 新增白名单/黑名单模式系统，对接同步 Zygisk Next 白名单模式
@@ -26,7 +26,7 @@
 - [Modules] 新增可从模块列表访问的独立模块操作页面
 - [Install] 新增下载并修补方式，支持下载启动镜像并修补
 - [Install] 支持通过 Intent 过滤器从外部应用打开 `.zip` 文件
-- [General] 更名为 WeaveMask，使用自定义包名 `oi.masksu.com`
+- [General] 更名为 MaskSu，使用自定义包名 `oi.masksu.com`
 - [General] 新增 Telegram 和 QQ 社群链接
 - [Build] 将 `buildSrc` 迁移至 `build-logic` 组合构建
 - [Build] 将 stub 资源拆分为独立的 `stub-res` 模块

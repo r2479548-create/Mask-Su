@@ -3,10 +3,10 @@
     <background android:drawable="@drawable/ic_launcher_background" />
     <foreground>
         <inset
-            android:drawable="@drawable/ic_launcher_legacy_weave"
-            android:insetLeft="-24%"
-            android:insetTop="-24%"
-            android:insetRight="-24%"
-            android:insetBottom="-24%" />
+            android:drawable="@drawable/ic_launcher_legacy_masksu"
+            android:insetLeft="-8%"
+            android:insetTop="-8%"
+            android:insetRight="-8%"
+            android:insetBottom="-8%" />
     </foreground>
 </adaptive-icon>

@@ -3,19 +3,19 @@ layout: home
 title: Home
 
 hero:
-  name: WeaveMask
+  name: MaskSu
   text: A differentiated and improved Magisk fork
   tagline: ""
   image:
     src: /logo.png
-    alt: WeaveMask
+    alt: MaskSu
   actions:
     - theme: brand
       text: Get started
-      link: /guide/what-is-weavemask
+      link: /guide/what-is-masksu
     - theme: alt
       text: View on GitHub
-      link: https://github.com/Seyud/WeaveMask
+      link: https://github.com/Seyud/MaskSu
 
 features:
   - title: Magisk based
@@ -23,6 +23,6 @@ features:
   - title: Enhanced features
     details: Additional improvements and optimizations over the original Magisk for better user experience.
   - title: WebUI support
-    details: Fully compatible with KernelSU WebUI API, enabling modules to provide graphical interfaces directly within the WeaveMask app.
+    details: Fully compatible with KernelSU WebUI API, enabling modules to provide graphical interfaces directly within the MaskSu app.
   - title: Active development
     details: Continuously maintained and updated to support the latest Android versions and devices.

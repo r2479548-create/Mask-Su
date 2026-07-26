@@ -25,7 +25,7 @@
     <string name="home_status_disabled">غير مُفعّل</string>
     <string name="home_status_supported">مدعوم</string>
     <string name="home_status_unsupported">غير مدعوم</string>
-    <string name="home_uninstall_weavemask">إزالة تثبيت WeaveMask</string>
+    <string name="home_uninstall_masksu">إزالة تثبيت MaskSu</string>
     <string name="home_notice_content">لا تحمّل Magisk إلا من صفحة GitHub الرسمية. الملفات من مصادر مجهولة قد تكون ضارة!</string>
     <string name="home_support_title">ادعمنا</string>
     <string name="home_follow_title">تابعنا</string>
@@ -184,7 +184,7 @@
     <string name="settings_home_layout">تخطيط الرئيسية</string>
     <string name="settings_home_layout_summary">اختر نمط التخطيط المستخدم في الصفحة الرئيسية</string>
     <string name="settings_home_layout_classic">كلاسيكي</string>
-    <string name="settings_home_layout_weavsk">Weavsk</string>
+    <string name="settings_home_layout_masksu">MaskSu</string>
     <string name="settings_key_color">اللون الأساسي</string>
     <string name="settings_key_color_summary">اختر اللون الأساسي لمظهر Monet</string>
     <string name="settings_key_color_default">افتراضي (المظهر)</string>
@@ -205,9 +205,9 @@
     <string name="color_sakura">ساكورا</string>
     <string name="settings_download_path_title">مسار التحميل</string>
     <string name="settings_download_path_message">سيتم حفظ الملفات في %1$s</string>
-    <string name="settings_hide_app_title">إخفاء تطبيق WeaveMask</string>
+    <string name="settings_hide_app_title">إخفاء تطبيق MaskSu</string>
     <string name="settings_hide_app_summary">تثبيت تطبيق وسيط بمعرّف حزمة عشوائي واسم مخصص</string>
-    <string name="settings_restore_app_title">استعادة تطبيق WeaveMask</string>
+    <string name="settings_restore_app_title">استعادة تطبيق MaskSu</string>
     <string name="settings_restore_app_summary">إلغاء الإخفاء واستعادة ملف APK الأصلي</string>
     <string name="language">اللغة</string>
     <string name="app_language">لغة التطبيق</string>
@@ -270,9 +270,9 @@
     <string name="settings_random_name_title">جعل اسم الملف الناتج عشوائي</string>
     <string name="settings_random_name_description">جعل اسم ملف الـboot وملفات tar المُعدّلة عشوائيًا لمنع اكتشافها</string>
     <string name="settings_app_icon_title">أيقونة التطبيق</string>
-    <string name="settings_app_icon_summary">اختر أيقونة مشغّل التطبيقات التي يستخدمها WeaveMask</string>
+    <string name="settings_app_icon_summary">اختر أيقونة مشغّل التطبيقات التي يستخدمها MaskSu</string>
     <string name="settings_app_icon_current">Monet</string>
-    <string name="settings_app_icon_legacy_weave">Weave</string>
+    <string name="settings_app_icon_legacy_masksu">MaskSu</string>
     <string name="settings_app_icon_legacy_mask">Mask</string>
     <string name="multiuser_mode">وضع تعدد المستخدمين</string>
     <string name="settings_owner_only">المالك فقط</string>
@@ -336,7 +336,7 @@
     <string name="done">تم!</string>
     <string name="done_action">تم تنفيذ إجراء %1$s</string>
     <string name="failure">فشل!</string>
-    <string name="hide_app_title">جارِ إخفاء تطبيق WeaveMask…</string>
+    <string name="hide_app_title">جارِ إخفاء تطبيق MaskSu…</string>
     <string name="open_link_failed_toast">لم يُعثر على تطبيق لفتح هذا الرابط</string>
     <string name="complete_uninstall">إزالة تثبيت كاملة</string>
     <string name="restore_img">استعادة ملف الboot</string>
@@ -354,7 +354,7 @@
     <string name="unsupport_system_app_msg">تشغيل هذا التطبيق كتطبيق نظام غير مدعوم. الرجاء إعادته إلى تطبيق مستخدم عادي.</string>
     <string name="unsupport_other_su_msg">تم اكتشاف ملف \"su\" ثنائي ليس من Magisk. الرجاء إزالة أي حل روت منافس و/أو إعادة تثبيت Magisk.</string>
     <string name="unsupport_external_storage_msg">تم تثبيت Magisk على التخزين الخارجي. الرجاء نقل التطبيق إلى التخزين الداخلي.</string>
-    <string name="unsupport_nonroot_stub_msg">لا يمكن لتطبيق WeaveMask المخفي الاستمرار في العمل لأن صلاحية الروت فُقدت. الرجاء استعادة ملف APK الأصلي.</string>
+    <string name="unsupport_nonroot_stub_msg">لا يمكن لتطبيق MaskSu المخفي الاستمرار في العمل لأن صلاحية الروت فُقدت. الرجاء استعادة ملف APK الأصلي.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">امنح إذن التخزين لتفعيل هذه الميزة</string>
     <string name="post_notifications_denied">امنح إذن الإشعارات لتفعيل هذه الميزة</string>

@@ -39,17 +39,17 @@ import top.yukonga.miuix.kmp.theme.MiuixTheme
 
 typealias DialogButtonClickListener = (DialogInterface) -> Unit
 
-interface WeaveDialogHost {
-    fun showWeaveDialog(dialog: WeaveDialog)
-    fun dismissWeaveDialog(dialog: WeaveDialog)
+interface MaskSuDialogHost {
+    fun showMaskSuDialog(dialog: MaskSuDialog)
+    fun dismissMaskSuDialog(dialog: MaskSuDialog)
 }
 
-class WeaveDialog(
+class MaskSuDialog(
     private val activity: Activity,
     @Suppress("UNUSED_PARAMETER") theme: Int = 0,
 ) : DialogInterface {
 
-    private val host = activity as? WeaveDialogHost
+    private val host = activity as? MaskSuDialogHost
 
     private var iconDrawable: Drawable? = null
     private var title: CharSequence = ""
@@ -99,7 +99,7 @@ class WeaveDialog(
         }
 
         fun invoke() {
-            listener(this@WeaveDialog)
+            listener(this@MaskSuDialog)
             if (!doNotDismiss) {
                 dismiss()
             }
@@ -158,8 +158,8 @@ class WeaveDialog(
     }
 
     fun show() {
-        checkNotNull(host) { "WeaveDialog host is only available in activities implementing WeaveDialogHost" }
-        host.showWeaveDialog(this)
+        checkNotNull(host) { "MaskSuDialog host is only available in activities implementing MaskSuDialogHost" }
+        host.showMaskSuDialog(this)
     }
 
     override fun cancel() {
@@ -167,7 +167,7 @@ class WeaveDialog(
     }
 
     override fun dismiss() {
-        host?.dismissWeaveDialog(this)
+        host?.dismissMaskSuDialog(this)
     }
 
     @Composable
@@ -288,10 +288,10 @@ class WeaveDialog(
 }
 
 @Composable
-fun WeaveDialogHostContent(
-    dialog: WeaveDialog?,
+fun MaskSuDialogHostContent(
+    dialog: MaskSuDialog?,
 ) {
-    var activeDialog by remember { mutableStateOf<WeaveDialog?>(null) }
+    var activeDialog by remember { mutableStateOf<MaskSuDialog?>(null) }
     var showDialog by remember { mutableStateOf(false) }
 
     LaunchedEffect(dialog) {

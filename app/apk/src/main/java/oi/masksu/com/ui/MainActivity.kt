@@ -66,9 +66,9 @@ import oi.masksu.com.core.ktx.writeTo
 import oi.masksu.com.core.tasks.AppMigration
 import oi.masksu.com.core.utils.RootUtils
 import oi.masksu.com.ui.component.MiuixConfirmDialog
-import oi.masksu.com.ui.dialog.WeaveDialog
-import oi.masksu.com.ui.dialog.WeaveDialogHost
-import oi.masksu.com.ui.dialog.WeaveDialogHostContent
+import oi.masksu.com.ui.dialog.MaskSuDialog
+import oi.masksu.com.ui.dialog.MaskSuDialogHost
+import oi.masksu.com.ui.dialog.MaskSuDialogHostContent
 import oi.masksu.com.ui.flash.FlashRequest
 import oi.masksu.com.ui.flash.FlashViewModel
 import oi.masksu.com.ui.home.HomeViewModel
@@ -105,7 +105,7 @@ class MainViewModel : BaseViewModel()
  * 使用 Jetpack Compose 构建用户界面
  * 实现 IActivityExtension 接口以支持权限请求等功能
  */
-class MainActivity : ComponentActivity(), IActivityExtension, ViewModelHolder, WeaveDialogHost {
+class MainActivity : ComponentActivity(), IActivityExtension, ViewModelHolder, MaskSuDialogHost {
 
     companion object {
         const val EXTRA_START_MAIN_TAB = "start_main_tab"
@@ -154,7 +154,7 @@ class MainActivity : ComponentActivity(), IActivityExtension, ViewModelHolder, W
     private val settingsViewModel: SettingsViewModel by viewModels { VMFactory }
 
     private var showAddShortcutDialog by mutableStateOf(false)
-    private val activeDialogs = mutableStateListOf<WeaveDialog>()
+    private val activeDialogs = mutableStateListOf<MaskSuDialog>()
 
     /** Intent 状态流，用于触发 LaunchedEffect 重新执行 */
     private val intentState = MutableStateFlow(0)
@@ -357,7 +357,7 @@ class MainActivity : ComponentActivity(), IActivityExtension, ViewModelHolder, W
                         },
                     )
 
-                    WeaveDialogHostContent(
+                    MaskSuDialogHostContent(
                         dialog = activeDialogs.firstOrNull()
                     )
                 }
@@ -585,7 +585,7 @@ class MainActivity : ComponentActivity(), IActivityExtension, ViewModelHolder, W
         }
     }
 
-    override fun showWeaveDialog(dialog: WeaveDialog) {
+    override fun showMaskSuDialog(dialog: MaskSuDialog) {
         runOnUiThread {
             if (!activeDialogs.contains(dialog)) {
                 activeDialogs.add(dialog)
@@ -593,7 +593,7 @@ class MainActivity : ComponentActivity(), IActivityExtension, ViewModelHolder, W
         }
     }
 
-    override fun dismissWeaveDialog(dialog: WeaveDialog) {
+    override fun dismissMaskSuDialog(dialog: MaskSuDialog) {
         runOnUiThread {
             activeDialogs.remove(dialog)
         }
@@ -605,10 +605,10 @@ class MainActivity : ComponentActivity(), IActivityExtension, ViewModelHolder, W
      */
     @SuppressLint("InlinedApi")
     private fun showInvalidStateMessage(): Unit = runOnUiThread {
-        WeaveDialog(this).apply {
+        MaskSuDialog(this).apply {
             setTitle(CoreR.string.unsupport_nonroot_stub_title)
             setMessage(CoreR.string.unsupport_nonroot_stub_msg)
-            setButton(WeaveDialog.ButtonType.POSITIVE) {
+            setButton(MaskSuDialog.ButtonType.POSITIVE) {
                 text = CoreR.string.install
                 onClick {
                     withPermission(REQUEST_INSTALL_PACKAGES) {
@@ -637,10 +637,10 @@ class MainActivity : ComponentActivity(), IActivityExtension, ViewModelHolder, W
     private fun showUnsupportedMessage() {
         // 检查 Magisk 版本是否不支持
         if (Info.env.isUnsupported) {
-            WeaveDialog(this).apply {
+            MaskSuDialog(this).apply {
                 setTitle(CoreR.string.unsupport_magisk_title)
                 setMessage(CoreR.string.unsupport_magisk_msg, Const.Version.MIN_VERSION)
-                setButton(WeaveDialog.ButtonType.POSITIVE) { text = android.R.string.ok }
+                setButton(MaskSuDialog.ButtonType.POSITIVE) { text = android.R.string.ok }
                 setCancelable(false)
             }.show()
         }
@@ -650,30 +650,30 @@ class MainActivity : ComponentActivity(), IActivityExtension, ViewModelHolder, W
                 ?.split(':')
                 ?.filterNot { File("$it/magisk").exists() }
                 ?.any { File("$it/su").exists() } == true) {
-            WeaveDialog(this).apply {
+            MaskSuDialog(this).apply {
                 setTitle(CoreR.string.unsupport_general_title)
                 setMessage(CoreR.string.unsupport_other_su_msg)
-                setButton(WeaveDialog.ButtonType.POSITIVE) { text = android.R.string.ok }
+                setButton(MaskSuDialog.ButtonType.POSITIVE) { text = android.R.string.ok }
                 setCancelable(false)
             }.show()
         }
 
         // 检查是否为系统应用
         if (applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM != 0) {
-            WeaveDialog(this).apply {
+            MaskSuDialog(this).apply {
                 setTitle(CoreR.string.unsupport_general_title)
                 setMessage(CoreR.string.unsupport_system_app_msg)
-                setButton(WeaveDialog.ButtonType.POSITIVE) { text = android.R.string.ok }
+                setButton(MaskSuDialog.ButtonType.POSITIVE) { text = android.R.string.ok }
                 setCancelable(false)
             }.show()
         }
 
         // 检查是否安装在外部存储
         if (applicationInfo.flags and ApplicationInfo.FLAG_EXTERNAL_STORAGE != 0) {
-            WeaveDialog(this).apply {
+            MaskSuDialog(this).apply {
                 setTitle(CoreR.string.unsupport_general_title)
                 setMessage(CoreR.string.unsupport_external_storage_msg)
-                setButton(WeaveDialog.ButtonType.POSITIVE) { text = android.R.string.ok }
+                setButton(MaskSuDialog.ButtonType.POSITIVE) { text = android.R.string.ok }
                 setCancelable(false)
             }.show()
         }

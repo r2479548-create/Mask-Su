@@ -9,7 +9,7 @@ import oi.masksu.com.core.base.ContentResultCallback
 import oi.masksu.com.core.base.IActivityExtension
 import oi.masksu.com.core.base.relaunch
 import oi.masksu.com.core.integration.AppShortcuts
-import oi.masksu.com.ui.dialog.WeaveDialog
+import oi.masksu.com.ui.dialog.MaskSuDialog
 
 class PermissionEvent(
     private val permission: String,
@@ -66,10 +66,10 @@ class DialogEvent(
     private val builder: DialogBuilder
 ) : UiEvent(), ActivityExecutor {
     override fun invoke(activity: ComponentActivity) {
-        WeaveDialog(activity).apply(builder::build).show()
+        MaskSuDialog(activity).apply(builder::build).show()
     }
 }
 
 interface DialogBuilder {
-    fun build(dialog: WeaveDialog)
+    fun build(dialog: MaskSuDialog)
 }

@@ -89,7 +89,7 @@ internal fun MaskSuCard(
                 modifier = Modifier.fillMaxSize(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                WeaveCardIcon(
+                MaskSuCardIcon(
                     isMonetTheme = isMonetTheme,
                     modifier = Modifier.size(56.dp)
                 )

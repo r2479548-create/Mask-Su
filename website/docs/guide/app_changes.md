@@ -1,4 +1,4 @@
-# WeaveMask Changelog
+# MaskSu Changelog
 
 ### v30.7.5
 
@@ -6,14 +6,14 @@
 - Migrate navigation from Fragment Navigation Component + SafeArgs to Navigation3 with custom type-safe `Navigator` and spring-physics transitions
 - Add 6 theme color modes: System, Light, Dark, Monet System, Monet Light, Monet Dark
 - Add 16 key color presets for Monet themes (Red, Pink, Purple, Deep Purple, Indigo, Blue, Cyan, Teal, Green, Yellow, Amber, Orange, Brown, Blue Grey, Sakura, Cotton Candy)
-- Add dual home screen layouts: Classic and Weavsk, switchable in settings
+- Add dual home screen layouts: Classic and MaskSu, switchable in settings
 - Redesign About page with dynamic shader background (`BgEffectBackground`), parallax scroll animation, and Miuix blur blend on app logo
 - Add Liquid Glass visual components: `CombinedBackdrop`, `InnerShadow`, `Lens`, `Vibrancy`
 - Add floating bottom bar with Liquid Glass blur effect toggle (API 33+)
 - Add blur effects toggle (API 31+)
 - Add page scale slider (80%–110%) with snap points
 - Add dedicated app language picker screen
-- Add app icon switcher: Current, Legacy Weave, Legacy Mask variants via `AppIconManager`
+- Add app icon switcher: Current, Legacy MaskSu, Legacy Mask variants via `AppIconManager`
 - Add predictive back gesture toggle for Android 14+
 - Add whitelist/blacklist superuser mode, syncing with Zygisk Next's whitelist mode
 - Add smart mode toggle as master switch for superuser list mode selector
@@ -29,7 +29,7 @@
 - Integrate WebUI theme injection via `MonetColorsProvider` — module WebUIs follow app's Monet color scheme
 - Add download-and-patch install method for boot image patching
 - Support opening `.zip` files from external apps via intent filter
-- Rebrand to WeaveMask with custom package name `oi.masksu.com`
+- Rebrand to MaskSu with custom package name `oi.masksu.com`
 - Replace all Rikka UI dependencies with Miuix components
 - Replace KAPT annotation processing with Kotlin Serialization and Compose compiler plugins
 - Migrate `buildSrc` to `build-logic` composite build

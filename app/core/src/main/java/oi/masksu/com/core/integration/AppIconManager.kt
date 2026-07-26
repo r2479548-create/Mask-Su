@@ -13,7 +13,7 @@ enum class AppIconVariant(
     private val aliasNameSuffix: String,
 ) {
     CURRENT("current", ".ui.MainActivityLauncherCurrent"),
-    LEGACY_WEAVE("legacy_weave", ".ui.MainActivityLauncherLegacyWeave"),
+    LEGACY_MASKSU("legacy_masksu", ".ui.MainActivityLauncherLegacyMaskSu"),
     LEGACY_MASK("legacy_mask", ".ui.MainActivityLauncherLegacyMask");
 
     fun componentName(context: Context) = ComponentName(
@@ -41,7 +41,7 @@ object AppIconManager {
         }
         return when (currentVariant()) {
             AppIconVariant.CURRENT -> R.mipmap.ic_launcher
-            AppIconVariant.LEGACY_WEAVE -> R.mipmap.ic_launcher_legacy_weave_icon
+            AppIconVariant.LEGACY_MASKSU -> R.mipmap.ic_launcher_legacy_masksu_icon
             AppIconVariant.LEGACY_MASK -> R.mipmap.ic_launcher_legacy_mask_icon
         }
     }
@@ -52,7 +52,7 @@ object AppIconManager {
         }
         return when (currentVariant()) {
             AppIconVariant.CURRENT -> R.drawable.ic_launcher_shortcut_current
-            AppIconVariant.LEGACY_WEAVE -> R.drawable.ic_launcher_shortcut_legacy_weave
+            AppIconVariant.LEGACY_MASKSU -> R.drawable.ic_launcher_shortcut_legacy_masksu
             AppIconVariant.LEGACY_MASK -> R.drawable.ic_launcher_shortcut_legacy_mask
         }
     }
@@ -63,7 +63,7 @@ object AppIconManager {
         }
         return when (currentVariant()) {
             AppIconVariant.CURRENT -> R.drawable.ic_launcher_preview_current
-            AppIconVariant.LEGACY_WEAVE -> R.drawable.ic_launcher_legacy_weave_preview
+            AppIconVariant.LEGACY_MASKSU -> R.drawable.ic_launcher_legacy_masksu_preview
             AppIconVariant.LEGACY_MASK -> R.drawable.ic_launcher_legacy_mask
         }
     }

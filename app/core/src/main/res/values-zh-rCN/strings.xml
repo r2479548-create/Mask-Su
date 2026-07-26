@@ -41,7 +41,7 @@
     <string name="home_status_disabled">禁用</string>
     <string name="home_status_supported">支持</string>
     <string name="home_status_unsupported">不支持</string>
-    <string name="home_uninstall_weavemask">卸载 MaskSu</string>
+    <string name="home_uninstall_masksu">卸载 MaskSu</string>
     <string name="invalid_update_channel">无效的更新通道</string>
     <string name="uninstall_magisk_title">卸载 MaskSu</string>
     <string name="uninstall_magisk_msg">所有模块将被停用或删除！超级用户权限丢失！\n如果设备尚未加密，用户数据可能通过使用 MaskSu 重新加密。</string>
@@ -179,14 +179,14 @@
     <string name="settings_home_layout">主页布局</string>
     <string name="settings_home_layout_summary">选择主页使用的布局样式</string>
     <string name="settings_home_layout_classic">Classic</string>
-    <string name="settings_home_layout_weavsk">MaskSu</string>
+    <string name="settings_home_layout_masksu">MaskSu</string>
     <string name="settings_key_color">种子颜色</string>
     <string name="settings_key_color_summary">选择莫奈主题的种子颜色</string>
     <string name="settings_key_color_default">默认（主题取色）</string>
     <string name="settings_app_icon_title">APP 图标</string>
     <string name="settings_app_icon_summary">选择 MaskSu 使用的桌面图标</string>
     <string name="settings_app_icon_current">Monet</string>
-    <string name="settings_app_icon_legacy_weave">Weave</string>
+    <string name="settings_app_icon_legacy_masksu">MaskSu</string>
     <string name="settings_app_icon_legacy_mask">Mask</string>
     <string name="color_red">红色</string>
     <string name="color_pink">粉色</string>

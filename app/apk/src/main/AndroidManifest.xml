@@ -49,11 +49,11 @@
         </activity-alias>
 
         <activity-alias
-            android:name=".ui.MainActivityLauncherLegacyWeave"
+            android:name=".ui.MainActivityLauncherLegacyMaskSu"
             android:enabled="false"
             android:exported="true"
-            android:icon="@mipmap/ic_launcher_legacy_weave_icon"
-            android:roundIcon="@mipmap/ic_launcher_legacy_weave_icon"
+            android:icon="@mipmap/ic_launcher_legacy_masksu_icon"
+            android:roundIcon="@mipmap/ic_launcher_legacy_masksu_icon"
             android:targetActivity=".ui.MainActivity"
             android:theme="@style/Theme.MaskSu.Splash">
             <intent-filter>

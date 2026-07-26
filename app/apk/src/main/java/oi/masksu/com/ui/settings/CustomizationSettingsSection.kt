@@ -41,16 +41,16 @@ internal fun CustomizationSettingsSection(
     val res = context.resources
     var homeLayoutMode by rememberSaveable { mutableIntStateOf(Config.homeLayoutMode) }
     val homeLayoutClassic = stringResource(CoreR.string.settings_home_layout_classic)
-    val homeLayoutMaskSu = stringResource(CoreR.string.settings_home_layout_weavsk)
+    val homeLayoutMaskSu = stringResource(CoreR.string.settings_home_layout_masksu)
     val iconCurrent = stringResource(CoreR.string.settings_app_icon_current)
-    val iconLegacyWeave = stringResource(CoreR.string.settings_app_icon_legacy_weave)
+    val iconLegacyMaskSu = stringResource(CoreR.string.settings_app_icon_legacy_masksu)
     val iconLegacyMask = stringResource(CoreR.string.settings_app_icon_legacy_mask)
     val homeLayoutItems = remember(homeLayoutClassic, homeLayoutMaskSu) {
         listOf(homeLayoutClassic, homeLayoutMaskSu)
     }
     val appIconVariants = remember { AppIconVariant.entries }
-    val appIconItems = remember(iconCurrent, iconLegacyWeave, iconLegacyMask) {
-        listOf(iconCurrent, iconLegacyWeave, iconLegacyMask)
+    val appIconItems = remember(iconCurrent, iconLegacyMaskSu, iconLegacyMask) {
+        listOf(iconCurrent, iconLegacyMaskSu, iconLegacyMask)
     }
     var appIconIndex by rememberSaveable {
         mutableIntStateOf(appIconVariants.indexOf(AppIconManager.currentVariant()).coerceAtLeast(0))

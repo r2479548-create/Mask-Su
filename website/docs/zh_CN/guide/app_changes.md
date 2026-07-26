@@ -1,4 +1,4 @@
-# WeaveMask 更新日志
+# MaskSu 更新日志
 
 ### v30.7.5
 
@@ -6,14 +6,14 @@
 - 将导航系统从 Fragment Navigation Component + SafeArgs 迁移至 Navigation3，支持类型安全的自定义 `Navigator` 和弹簧物理过渡动画
 - 新增 6 种主题颜色模式：跟随系统、浅色、深色、Monet 跟随系统、Monet 浅色、Monet 深色
 - 新增 16 种 Monet 主题预设主色调（红、粉、紫、深紫、靛、蓝、青、碧、绿、黄、琥珀、橙、棕、蓝灰、樱花、棉花糖）
-- 新增双主页布局：经典和 Weavsk，可在设置中切换
+- 新增双主页布局：经典和 MaskSu，可在设置中切换
 - 重新设计关于页面，支持动态着色器背景（`BgEffectBackground`）、视差滚动动画和 Miuix 模糊混合效果
 - 新增 Liquid Glass 视觉组件：`CombinedBackdrop`、`InnerShadow`、`Lens`、`Vibrancy`
 - 新增浮动底栏，支持 Liquid Glass 模糊效果开关（API 33+）
 - 新增模糊效果开关（API 31+）
 - 新增页面缩放滑块（80%–110%），支持吸附点
 - 新增独立的应用语言选择页面
-- 新增应用图标切换器：当前图标、Legacy Weave、Legacy Mask 三种变体，通过 `AppIconManager` 管理
+- 新增应用图标切换器：当前图标、Legacy MaskSu、Legacy Mask 三种变体，通过 `AppIconManager` 管理
 - 新增 Android 14+ 预测性返回手势开关
 - 新增白名单/黑名单超级用户模式，对接同步 Zygisk Next 白名单模式
 - 新增智能模式开关，作为超级用户列表模式选择器的主开关
@@ -29,7 +29,7 @@
 - 集成 WebUI 主题注入（`MonetColorsProvider`）— 模块 WebUI 跟随应用的 Monet 配色方案
 - 新增下载并修补安装方式，支持下载启动镜像并修补
 - 支持通过 Intent 过滤器从外部应用打开 `.zip` 文件
-- 更名为 WeaveMask，使用自定义包名 `oi.masksu.com`
+- 更名为 MaskSu，使用自定义包名 `oi.masksu.com`
 - 将所有 Rikka UI 依赖替换为 Miuix 组件
 - 将 KAPT 注解处理替换为 Kotlin Serialization 和 Compose 编译器插件
 - 将 `buildSrc` 迁移至 `build-logic` 组合构建

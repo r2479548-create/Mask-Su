@@ -142,10 +142,10 @@ internal fun InstallActionButton(
 ) {
     val context = LocalContext.current
     val isMonetTheme = LocalIsMonetTheme.current
-    val weaveAccentColor = if (isMonetTheme) {
+    val masksuAccentColor = if (isMonetTheme) {
         MiuixTheme.colorScheme.primary
     } else {
-        colorResource(id = CoreR.color.weave_brand_main)
+        colorResource(id = CoreR.color.masksu_brand_main)
     }
     val icon = if (appState == HomeViewModel.State.OUTDATED) MiuixIcons.Update else MiuixIcons.Download
     val text = if (appState == HomeViewModel.State.OUTDATED) {
@@ -165,19 +165,19 @@ internal fun InstallActionButton(
     }
 
     if (matchUninstallMetrics) {
-        val isWeaveBrandAccent = !isMonetTheme
-        val usePrimaryBlockStyle = usePrimaryBlockStyleWhenNonMonet && isWeaveBrandAccent
+        val isMaskSuBrandAccent = !isMonetTheme
+        val usePrimaryBlockStyle = usePrimaryBlockStyleWhenNonMonet && isMaskSuBrandAccent
         val containerColor = if (usePrimaryBlockStyle) {
             MiuixTheme.colorScheme.primary
         } else if (appState == HomeViewModel.State.OUTDATED) {
-            if (isWeaveBrandAccent) weaveAccentColor else MiuixTheme.colorScheme.primary
+            if (isMaskSuBrandAccent) masksuAccentColor else MiuixTheme.colorScheme.primary
         } else {
-            if (isWeaveBrandAccent) weaveAccentColor.copy(alpha = 0.14f) else MiuixTheme.colorScheme.secondaryContainer
+            if (isMaskSuBrandAccent) masksuAccentColor.copy(alpha = 0.14f) else MiuixTheme.colorScheme.secondaryContainer
         }
         val buttonIconTint = if (usePrimaryBlockStyle) {
             MiuixTheme.colorScheme.onPrimary
-        } else if (isWeaveBrandAccent) {
-            if (appState == HomeViewModel.State.OUTDATED) Color.White else weaveAccentColor
+        } else if (isMaskSuBrandAccent) {
+            if (appState == HomeViewModel.State.OUTDATED) Color.White else masksuAccentColor
         } else {
             iconTint
         }
@@ -556,13 +556,13 @@ private fun HomeItemRow(
 }
 
 @Composable
-internal fun WeaveCardIcon(
+internal fun MaskSuCardIcon(
     isMonetTheme: Boolean,
     modifier: Modifier = Modifier,
 ) {
     if (!isMonetTheme) {
         Image(
-            painter = painterResource(id = CoreR.drawable.ic_weave_card),
+            painter = painterResource(id = CoreR.drawable.ic_masksu_card),
             contentDescription = null,
             modifier = modifier
         )
@@ -571,13 +571,13 @@ internal fun WeaveCardIcon(
 
     Box(modifier = modifier) {
         Image(
-            painter = painterResource(id = CoreR.drawable.ic_weave_card),
+            painter = painterResource(id = CoreR.drawable.ic_masksu_card),
             contentDescription = null,
             colorFilter = ColorFilter.tint(MiuixTheme.colorScheme.primary),
             modifier = Modifier.fillMaxSize()
         )
         Image(
-            painter = painterResource(id = CoreR.drawable.ic_weave_card_monet_detail),
+            painter = painterResource(id = CoreR.drawable.ic_masksu_card_monet_detail),
             contentDescription = null,
             colorFilter = ColorFilter.tint(lerp(MiuixTheme.colorScheme.primary, Color.White, 0.28f)),
             modifier = Modifier.fillMaxSize()

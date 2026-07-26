@@ -53,7 +53,7 @@ internal fun LazyListScope.classicHomeContent(
                     )
                     if (Info.env.isActive) {
                         UninstallButton(
-                            text = context.getString(CoreR.string.home_uninstall_weavemask),
+                            text = context.getString(CoreR.string.home_uninstall_masksu),
                             onPressed = { viewModel.onDeletePressed() }
                         )
                     }

@@ -25,7 +25,7 @@
     <string name="home_status_disabled">No</string>
     <string name="home_status_supported">Yes</string>
     <string name="home_status_unsupported">No</string>
-    <string name="home_uninstall_weavemask">Uninstall MaskSu</string>
+    <string name="home_uninstall_masksu">Uninstall MaskSu</string>
     <string name="home_notice_content">Download MaskSu ONLY from the official GitHub page. Files from unknown sources can be malicious!</string>
     <string name="home_support_title">Support Us</string>
     <string name="home_follow_title">Follow Us</string>
@@ -184,7 +184,7 @@
     <string name="settings_home_layout">Home layout</string>
     <string name="settings_home_layout_summary">Choose the layout style used on the home page</string>
     <string name="settings_home_layout_classic">Classic</string>
-    <string name="settings_home_layout_weavsk">MaskSu</string>
+    <string name="settings_home_layout_masksu">MaskSu</string>
     <string name="settings_key_color">Seed color</string>
     <string name="settings_key_color_summary">Choose seed color for Monet theme</string>
     <string name="settings_key_color_default">Default (Theme)</string>
@@ -272,7 +272,7 @@
     <string name="settings_app_icon_title">APP icon</string>
     <string name="settings_app_icon_summary">Choose which launcher icon MaskSu uses</string>
     <string name="settings_app_icon_current">Monet</string>
-    <string name="settings_app_icon_legacy_weave">Weave</string>
+    <string name="settings_app_icon_legacy_masksu">MaskSu</string>
     <string name="settings_app_icon_legacy_mask">Mask</string>
     <string name="multiuser_mode">Multiuser mode</string>
     <string name="settings_owner_only">Device owner only</string>

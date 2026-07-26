@@ -11,7 +11,7 @@
 - [App] Add floating bottom bar with Liquid Glass blur toggle
 - [App] Add page scale slider (80%–110%) for display size customization
 - [App] Add dedicated app language picker screen
-- [App] Add app icon switcher with Current, Legacy Weave, and Legacy Mask variants
+- [App] Add app icon switcher with Current, Legacy MaskSu, and Legacy Mask variants
 - [App] Add predictive back gesture toggle for Android 14+
 - [App] Integrate WebUI theme injection — module WebUIs now follow the app's Monet color scheme via CSS custom properties
 - [Superuser] Add whitelist/blacklist mode system, syncing with Zygisk Next's whitelist mode
