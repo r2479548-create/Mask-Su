@@ -2,9 +2,9 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'MaskSu',
-  base: '/MaskSu/',
+  base: '/Mask-Su/',
   sitemap: {
-    hostname: 'https://masksu.github.io'
+    hostname: 'https://r2479548-create.github.io/Mask-Su/'
   },
   locales: {
     root: {
@@ -103,12 +103,12 @@ export default defineConfig({
     }
   },
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/MaskSu/logo.png' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/Mask-Su/logo.png' }],
     [
       'script',
       {},
       `;(() => {
-        const base = '/MaskSu/'
+        const base = '/Mask-Su/'
         const path = window.location.pathname
         if (path.startsWith(base + 'zh_CN/') || path === base + 'zh_CN') return
         if (path.startsWith(base + 'guide/') || path === base) {
