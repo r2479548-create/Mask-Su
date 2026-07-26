@@ -1,0 +1,83 @@
+package oi.masksu.com.ui.superuser
+
+import android.content.pm.ApplicationInfo
+import oi.masksu.com.core.Config
+import oi.masksu.com.core.R as CoreR
+import oi.masksu.com.core.model.su.SuPolicy
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlin.math.roundToInt
+
+/**
+ * 共享的超级用户列表模式状态。
+ * SettingsViewModel 写入，SuperuserViewModel 读取，
+ * 保证模式切换后 Superuser 页面能即时感知，无需等待 Config 持久化。
+ */
+object SuperuserModeState {
+    private val _mode = MutableStateFlow(normalizeSuperuserListMode(Config.suListMode))
+    val mode: StateFlow<Int> = _mode.asStateFlow()
+
+    fun update(mode: Int) {
+        _mode.value = normalizeSuperuserListMode(mode)
+    }
+}
+
+internal fun normalizeSuperuserListMode(mode: Int): Int {
+    return when (mode) {
+        Config.Value.SU_MODE_BLACKLIST -> Config.Value.SU_MODE_BLACKLIST
+        else -> Config.Value.SU_MODE_WHITELIST
+    }
+}
+
+internal fun isWhitelistMode(mode: Int): Boolean =
+    normalizeSuperuserListMode(mode) == Config.Value.SU_MODE_WHITELIST
+
+internal fun defaultShowSystemAppsForMode(mode: Int): Boolean = !isWhitelistMode(mode)
+
+internal fun shouldShowPolicySlider(
+    policy: Int,
+    suRestrict: Boolean,
+): Boolean = suRestrict || policy == SuPolicy.RESTRICT
+
+internal fun isInstalledPackage(flags: Int): Boolean =
+    flags and ApplicationInfo.FLAG_INSTALLED != 0
+
+internal fun isInstalledPackage(applicationInfo: ApplicationInfo): Boolean =
+    isInstalledPackage(applicationInfo.flags)
+
+internal fun isSystemApp(flags: Int): Boolean =
+    flags and (ApplicationInfo.FLAG_SYSTEM or ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0
+
+internal fun isSystemApp(applicationInfo: ApplicationInfo): Boolean =
+    isSystemApp(applicationInfo.flags)
+
+internal fun policyToSliderValue(policy: Int): Float {
+    return when (policy) {
+        SuPolicy.QUERY -> 0f
+        SuPolicy.DENY -> 1f
+        SuPolicy.RESTRICT -> 2f
+        SuPolicy.ALLOW -> 3f
+        else -> 0f
+    }
+}
+
+internal fun sliderValueToPolicy(value: Float): Int {
+    return when (value.roundToInt().coerceIn(0, 3)) {
+        0 -> SuPolicy.QUERY
+        1 -> SuPolicy.DENY
+        2 -> SuPolicy.RESTRICT
+        3 -> SuPolicy.ALLOW
+        else -> SuPolicy.QUERY
+    }
+}
+
+internal fun policyToTextRes(policy: Int): Int {
+    return when (policy) {
+        SuPolicy.QUERY -> CoreR.string.prompt
+        SuPolicy.DENY -> CoreR.string.deny
+        SuPolicy.RESTRICT -> CoreR.string.restrict
+        SuPolicy.ALLOW -> CoreR.string.grant
+        else -> CoreR.string.prompt
+    }
+}

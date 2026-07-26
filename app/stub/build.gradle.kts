@@ -10,7 +10,7 @@ lsparanoid {
 }
 
 android {
-    namespace = "io.github.seyud.weave"
+    namespace = "oi.masksu.com"
     enableKotlin = false
 
     val canary = !Config.version.contains(".")
@@ -19,7 +19,7 @@ android {
     val canaryUrl = base + "canary-${Config.versionCode}/"
 
     defaultConfig {
-        applicationId = "io.github.seyud.weave"
+        applicationId = "oi.masksu.com"
         versionCode = 1
         versionName = "1.0"
         buildConfigField("String", "APK_URL", "\"$url\"")

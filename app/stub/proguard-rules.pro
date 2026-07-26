@@ -27,6 +27,6 @@
 # Excessive obfuscation
 -repackageclasses
 -allowaccessmodification
--keepclassmembers class io.github.seyud.weave.dummy.* { <init>(); }
--keepclassmembers class io.github.seyud.weave.DownloadActivity { <init>(); }
--keepclassmembers class io.github.seyud.weave.StubRootService { <init>(); }
+-keepclassmembers class oi.masksu.com.dummy.* { <init>(); }
+-keepclassmembers class oi.masksu.com.DownloadActivity { <init>(); }
+-keepclassmembers class oi.masksu.com.StubRootService { <init>(); }

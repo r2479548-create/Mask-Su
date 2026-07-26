@@ -53,14 +53,14 @@ run_setup() {
   # Install the test app
   adb install -r -g out/test.apk
 
-  local app='io.github.seyud.weave.test/io.github.seyud.weave.test.AppTestRunner'
+  local app='oi.masksu.com.test/oi.masksu.com.test.AppTestRunner'
 
   # Run setup through the test app
   am_instrument '.Environment#setupEnvironment' $app
 }
 
 run_tests() {
-  local pkg='io.github.seyud.weave.test'
+  local pkg='oi.masksu.com.test'
   local self="$pkg/$pkg.TestRunner"
   local app="$pkg/$pkg.AppTestRunner"
   local stub="repackaged.$pkg/$pkg.AppTestRunner"

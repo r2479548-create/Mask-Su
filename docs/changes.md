@@ -26,7 +26,7 @@
 - [Modules] Add per-module action screen accessible from module list
 - [Install] Add download-and-patch method for boot image patching
 - [Install] Support opening `.zip` files from external apps via intent filter
-- [General] Rebrand to MaskSu with custom package name `io.github.seyud.weave`
+- [General] Rebrand to MaskSu with custom package name `oi.masksu.com`
 - [General] Add Telegram and QQ community links
 - [Build] Migrate `buildSrc` to `build-logic` composite build
 - [Build] Extract stub resources to separate `stub-res` module

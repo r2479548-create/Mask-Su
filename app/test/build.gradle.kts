@@ -3,10 +3,10 @@ plugins {
 }
 
 android {
-    namespace = "io.github.seyud.weave.test"
+    namespace = "oi.masksu.com.test"
 
     defaultConfig {
-        applicationId = "io.github.seyud.weave.test"
+        applicationId = "oi.masksu.com.test"
         versionCode = 1
         versionName = "1.0"
         proguardFile("proguard-rules.pro")

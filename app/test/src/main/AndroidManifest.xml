@@ -13,11 +13,11 @@
     </application>
 
     <instrumentation
-        android:name="io.github.seyud.weave.test.AppTestRunner"
-        android:targetPackage="io.github.seyud.weave" />
+        android:name="oi.masksu.com.test.AppTestRunner"
+        android:targetPackage="oi.masksu.com" />
 
     <instrumentation
-        android:name="io.github.seyud.weave.test.TestRunner"
-        android:targetPackage="io.github.seyud.weave.test" />
+        android:name="oi.masksu.com.test.TestRunner"
+        android:targetPackage="oi.masksu.com.test" />
 
 </manifest>

@@ -17,10 +17,10 @@ wire {
 }
 
 android {
-    namespace = "io.github.seyud.weave.core"
+    namespace = "oi.masksu.com.core"
 
     defaultConfig {
-        buildConfigField("String", "APP_PACKAGE_NAME", "\"io.github.seyud.weave\"")
+        buildConfigField("String", "APP_PACKAGE_NAME", "\"oi.masksu.com\"")
         buildConfigField("int", "APP_VERSION_CODE", "${Config.versionCode}")
         buildConfigField("String", "APP_VERSION_NAME", "\"${Config.version}\"")
         buildConfigField("int", "STUB_VERSION", Config.stubVersion)

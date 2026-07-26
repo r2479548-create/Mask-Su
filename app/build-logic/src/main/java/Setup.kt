@@ -275,10 +275,10 @@ fun Project.setupMainApk() {
     setupAppCommon()
 
     androidApp {
-        namespace = "io.github.seyud.weave"
+        namespace = "oi.masksu.com"
 
         defaultConfig {
-            applicationId = "io.github.seyud.weave"
+            applicationId = "oi.masksu.com"
             vectorDrawables.useSupportLibrary = true
             versionName = Config.version
             versionCode = Config.versionCode

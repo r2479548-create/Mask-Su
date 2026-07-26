@@ -1,0 +1,130 @@
+package oi.masksu.com.ui.settings
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.add
+import androidx.compose.foundation.layout.displayCutout
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.only
+import androidx.compose.foundation.layout.systemBars
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.Dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import oi.masksu.com.ui.theme.LocalEnableBlur
+import oi.masksu.com.ui.util.attachBarBlurBackdrop
+import oi.masksu.com.ui.util.barBlurContainerColor
+import oi.masksu.com.ui.util.defaultBarBlur
+import oi.masksu.com.ui.util.rememberBarBlurBackdrop
+import oi.masksu.com.arch.BaseViewModel.BaseEvent
+import oi.masksu.com.ui.component.ObserveAsEvents
+import oi.masksu.com.ui.component.showSnackbarEvent
+import top.yukonga.miuix.kmp.basic.MiuixScrollBehavior
+import top.yukonga.miuix.kmp.basic.Scaffold
+import top.yukonga.miuix.kmp.basic.SnackbarHostState
+import top.yukonga.miuix.kmp.basic.TopAppBar
+import top.yukonga.miuix.kmp.theme.MiuixTheme.colorScheme
+import kotlinx.coroutines.launch
+import androidx.compose.runtime.rememberCoroutineScope
+import oi.masksu.com.core.R as CoreR
+
+@Composable
+fun SettingsScreen(
+    viewModel: SettingsViewModel,
+    contentBottomPadding: Dp,
+    isActive: Boolean,
+    onNavigateToLog: () -> Unit,
+    onNavigateToAppLanguage: () -> Unit,
+    onNavigateToDenyListConfig: () -> Unit,
+    onSuperuserModeChanged: () -> Unit,
+    onNavigateToColorPalette: () -> Unit,
+    snackbarHostState: SnackbarHostState,
+    modifier: Modifier = Modifier,
+) {
+    val context = LocalContext.current
+    val scrollBehavior = MiuixScrollBehavior()
+    val enableBlur = LocalEnableBlur.current
+    val surfaceColor = colorScheme.surface
+    val blurBackdrop = rememberBarBlurBackdrop(enableBlur, surfaceColor)
+    val localState = rememberSettingsScreenLocalState()
+    val currentSuperuserListMode by viewModel.superuserListMode.collectAsStateWithLifecycle()
+    val visibility = rememberSettingsVisibility(context, currentSuperuserListMode)
+
+    DisposableEffect(viewModel, onNavigateToLog, onNavigateToDenyListConfig, onSuperuserModeChanged) {
+        viewModel.onNavigateToLog = onNavigateToLog
+        viewModel.onNavigateToDenyListConfig = onNavigateToDenyListConfig
+        viewModel.onSuperuserModeChanged = onSuperuserModeChanged
+        onDispose {
+            viewModel.onNavigateToLog = null
+            viewModel.onNavigateToDenyListConfig = null
+            viewModel.onSuperuserModeChanged = null
+        }
+    }
+
+    val scope = rememberCoroutineScope()
+    ObserveAsEvents(viewModel.event) { event ->
+        when (event) {
+            is SettingsViewModel.SettingsEvent.ShowSnackbar -> scope.launch {
+                snackbarHostState.showSnackbarEvent(
+                    message = event.message.getText(context.resources),
+                    duration = event.duration,
+                )
+            }
+        }
+    }
+    ObserveAsEvents(viewModel.baseEvent) { event ->
+        when (event) {
+            is BaseEvent.ShowSnackbar -> scope.launch {
+                snackbarHostState.showSnackbarEvent(
+                    message = event.message.getText(context.resources),
+                    duration = event.duration,
+                )
+            }
+        }
+    }
+
+    Scaffold(
+        modifier = modifier,
+        contentWindowInsets = WindowInsets.systemBars
+            .add(WindowInsets.displayCutout)
+            .only(WindowInsetsSides.Horizontal),
+        topBar = {
+            TopAppBar(
+                modifier = Modifier.defaultBarBlur(blurBackdrop, surfaceColor),
+                color = barBlurContainerColor(blurBackdrop, surfaceColor),
+                title = stringResource(CoreR.string.settings),
+                scrollBehavior = scrollBehavior,
+            )
+        },
+        popupHost = { },
+    ) { innerPadding ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .attachBarBlurBackdrop(blurBackdrop),
+        ) {
+            SettingsScreenContent(
+                innerPadding = innerPadding,
+                viewModel = viewModel,
+                localState = localState,
+                visibility = visibility,
+                currentSuperuserListMode = currentSuperuserListMode,
+                isActive = isActive,
+                contentBottomPadding = contentBottomPadding,
+                nestedScrollConnection = scrollBehavior.nestedScrollConnection,
+                onNavigateToAppLanguage = onNavigateToAppLanguage,
+                onNavigateToColorPalette = onNavigateToColorPalette,
+            )
+        }
+    }
+
+    SettingsScreenDialogs(
+        viewModel = viewModel,
+        state = localState,
+    )
+}

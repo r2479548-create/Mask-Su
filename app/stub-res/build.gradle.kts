@@ -5,7 +5,7 @@ plugins {
 setupCommon()
 
 android {
-    namespace = "io.github.seyud.weave"
+    namespace = "oi.masksu.com"
     enableKotlin = false
 
     buildTypes {

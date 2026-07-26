@@ -1,0 +1,311 @@
+package oi.masksu.com.ui.settings
+
+import android.content.Context
+import android.widget.Toast
+import androidx.lifecycle.viewModelScope
+import oi.masksu.com.arch.BaseViewModel
+import oi.masksu.com.core.AppContext
+import oi.masksu.com.core.Config
+import oi.masksu.com.core.integration.AppIconManager
+import oi.masksu.com.core.integration.AppIconVariant
+import oi.masksu.com.core.ktx.toast
+import oi.masksu.com.core.tasks.AppMigration
+import oi.masksu.com.core.utils.RootUtils
+import oi.masksu.com.events.AddHomeIconEvent
+import oi.masksu.com.events.AuthEvent
+import oi.masksu.com.ui.superuser.SuperuserModeState
+import oi.masksu.com.ui.superuser.SuperuserModeSyncCoordinator
+import oi.masksu.com.ui.superuser.normalizeSuperuserListMode
+import oi.masksu.com.ui.superuser.superuserModeUsesWhitelist
+import oi.masksu.com.utils.TextHolder
+import oi.masksu.com.utils.asText
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.launch
+import top.yukonga.miuix.kmp.basic.SnackbarDuration
+import oi.masksu.com.core.R as CoreR
+
+/**
+ * 设置页面 ViewModel
+ * 处理设置页面的业务逻辑和用户交互
+ */
+class SettingsViewModel internal constructor(
+    private val superuserModeSync: SuperuserModeSyncCoordinator = SuperuserModeSyncCoordinator(),
+    private val whitelistModeDenyListCoordinator: WhitelistModeDenyListCoordinator = WhitelistModeDenyListCoordinator(),
+) : BaseViewModel() {
+
+    sealed interface SettingsEvent {
+        data class ShowSnackbar(
+            val message: TextHolder,
+            val duration: SnackbarDuration = SnackbarDuration.Short,
+        ) : SettingsEvent
+    }
+
+    private val _event = Channel<SettingsEvent>(Channel.BUFFERED)
+    val event: Flow<SettingsEvent> = _event.receiveAsFlow()
+
+    private data class LocalDenyListSyncRequest(
+        val serial: Int,
+        val targetMode: Int,
+        val fallbackMode: Int,
+        val notifyOnFailure: Boolean,
+    )
+
+    private fun newLocalDenyListSyncRequest(
+        targetMode: Int,
+        fallbackMode: Int,
+    ): LocalDenyListSyncRequest {
+        val serial = Config.suListModeDenyListPendingSerial + 1
+        return LocalDenyListSyncRequest(
+            serial = serial,
+            targetMode = targetMode,
+            fallbackMode = fallbackMode,
+            notifyOnFailure = true,
+        )
+    }
+
+    private fun passiveLocalDenyListSyncRequest(targetMode: Int): LocalDenyListSyncRequest =
+        LocalDenyListSyncRequest(
+            serial = 0,
+            targetMode = targetMode,
+            fallbackMode = targetMode,
+            notifyOnFailure = false,
+        )
+
+    private fun pendingLocalDenyListSyncRequest(): LocalDenyListSyncRequest? {
+        if (!Config.suListModeDenyListPendingValid) {
+            return null
+        }
+        return LocalDenyListSyncRequest(
+            serial = Config.suListModeDenyListPendingSerial,
+            targetMode = normalizeSuperuserListMode(Config.suListModeDenyListPendingTargetMode),
+            fallbackMode = normalizeSuperuserListMode(Config.suListModeDenyListPendingFallbackMode),
+            notifyOnFailure = true,
+        )
+    }
+
+    private fun setPendingLocalDenyListSyncRequest(request: LocalDenyListSyncRequest?) {
+        if (request == null) {
+            Config.suListModeDenyListPendingTargetMode = Config.Value.SU_MODE_WHITELIST
+            Config.suListModeDenyListPendingFallbackMode = Config.Value.SU_MODE_BLACKLIST
+            Config.suListModeDenyListPendingSerial = 0
+            Config.suListModeDenyListPendingValid = false
+            return
+        }
+        Config.suListModeDenyListPendingSerial = request.serial
+        Config.suListModeDenyListPendingTargetMode = request.targetMode
+        Config.suListModeDenyListPendingFallbackMode = request.fallbackMode
+        Config.suListModeDenyListPendingValid = true
+    }
+
+    constructor() : this(
+        SuperuserModeSyncCoordinator(),
+        WhitelistModeDenyListCoordinator(),
+    )
+
+    private val _superuserListMode = MutableStateFlow(normalizeSuperuserListMode(Config.suListMode))
+    val superuserListMode: StateFlow<Int> = _superuserListMode.asStateFlow()
+    private val localDenyListSyncRequests = Channel<LocalDenyListSyncRequest>(Channel.CONFLATED)
+
+    /** 日志页面导航回调 */
+    var onNavigateToLog: (() -> Unit)? = null
+
+    /** DenyList 配置页面导航回调 */
+    var onNavigateToDenyListConfig: (() -> Unit)? = null
+
+    /** 超级用户模式切换完成后的联动回调 */
+    var onSuperuserModeChanged: (() -> Unit)? = null
+
+    init {
+        viewModelScope.launch {
+            val pendingRequest = pendingLocalDenyListSyncRequest()
+            val zygiskNextActive = superuserModeSync.isZygiskNextActive()
+            if (pendingRequest != null) {
+                if (!Config.suProfessionalMode && superuserModeUsesWhitelist(pendingRequest.targetMode)) {
+                    Config.suListMode = Config.Value.SU_MODE_BLACKLIST
+                    _superuserListMode.value = Config.Value.SU_MODE_BLACKLIST
+                    setPendingLocalDenyListSyncRequest(null)
+                    return@launch
+                }
+                if (!zygiskNextActive) {
+                    if (normalizeSuperuserListMode(Config.suListMode) != pendingRequest.targetMode) {
+                        Config.suListMode = pendingRequest.targetMode
+                        _superuserListMode.value = pendingRequest.targetMode
+                    }
+                    localDenyListSyncRequests.trySend(pendingRequest)
+                }
+                return@launch
+            }
+
+            val currentMode = normalizeSuperuserListMode(Config.suListMode)
+            if (zygiskNextActive) {
+                val resolvedMode = superuserModeSync.resolveMode(currentMode)
+                val effectiveMode = if (!Config.suProfessionalMode && superuserModeUsesWhitelist(resolvedMode)) {
+                    Config.Value.SU_MODE_BLACKLIST
+                } else {
+                    resolvedMode
+                }
+                if (effectiveMode != currentMode) {
+                    Config.suListMode = effectiveMode
+                }
+                _superuserListMode.value = effectiveMode
+            } else if (shouldQueuePassiveWhitelistReconcile(
+                    hasPendingLocalSync = false,
+                    currentMode = currentMode,
+                    zygiskNextActive = zygiskNextActive,
+                )
+            ) {
+                localDenyListSyncRequests.trySend(passiveLocalDenyListSyncRequest(currentMode))
+            }
+        }
+
+        viewModelScope.launch {
+            for (request in localDenyListSyncRequests) {
+                val denyListResult = if (superuserModeUsesWhitelist(request.targetMode)) {
+                    whitelistModeDenyListCoordinator.applyWhitelistMode()
+                } else {
+                    whitelistModeDenyListCoordinator.restoreBlacklistMode()
+                }
+
+                Config.denyList = denyListResult.denyListEnabled
+                if (pendingLocalDenyListSyncRequest() == request) {
+                    if (!denyListResult.success &&
+                        request.notifyOnFailure &&
+                        normalizeSuperuserListMode(Config.suListMode) == request.targetMode &&
+                        _superuserListMode.value == request.targetMode
+                    ) {
+                        Config.suListMode = request.fallbackMode
+                        _superuserListMode.value = request.fallbackMode
+                        onSuperuserModeChanged?.invoke()
+                        _event.trySend(SettingsEvent.ShowSnackbar("Superuser mode sync failed".asText()))
+                    }
+                    setPendingLocalDenyListSyncRequest(null)
+                }
+            }
+        }
+    }
+
+    /**
+     * 添加桌面快捷方式
+     */
+    fun addShortcut() {
+        AddHomeIconEvent().publish()
+    }
+
+    fun updateAppIcon(context: Context, variant: AppIconVariant): Boolean {
+        return AppIconManager.setVariant(context, variant)
+    }
+
+    /**
+     * 创建 Systemless Hosts
+     */
+    fun createHosts() {
+        viewModelScope.launch {
+            RootUtils.addSystemlessHosts()
+            AppContext.toast(CoreR.string.settings_hosts_toast, Toast.LENGTH_SHORT)
+        }
+    }
+
+    /**
+     * 导航到 DenyList 配置页面
+     */
+    fun navigateToDenyListConfig() {
+        onNavigateToDenyListConfig?.invoke()
+    }
+
+    /**
+     * 恢复应用
+     */
+    suspend fun restoreApp(context: Context): Boolean {
+        return AppMigration.restoreApp(context)
+    }
+
+    /**
+     * 隐藏应用
+     * @param newName 新的应用名称
+     */
+    suspend fun hideApp(context: Context, newName: String): Boolean {
+        return AppMigration.hideApp(context, newName)
+    }
+
+    /**
+     * 执行生物认证
+     * @param callback 认证结果回调
+     */
+    fun authenticate(callback: (Boolean) -> Unit) {
+        AuthEvent { callback(true) }.publish()
+    }
+
+    /**
+     * 切换设置项前进行生物认证
+     * @param checked 目标状态
+     * @param callback 认证结果回调
+     */
+    fun authenticateAndToggle(checked: Boolean, callback: (Boolean) -> Unit) {
+        AuthEvent { callback(true) }.publish()
+    }
+
+    fun setSuperuserListMode(mode: Int, onComplete: (Int) -> Unit = {}) {
+        val normalizedMode = normalizeSuperuserListMode(mode)
+        if (normalizeSuperuserListMode(Config.suListMode) == normalizedMode) {
+            _superuserListMode.value = normalizedMode
+            onComplete(normalizedMode)
+            return
+        }
+
+        // 立即广播新模式，Superuser 页面可即时感知
+        SuperuserModeState.update(normalizedMode)
+
+        viewModelScope.launch {
+            val currentMode = normalizeSuperuserListMode(Config.suListMode)
+            val result = superuserModeSync.applyMode(normalizedMode)
+            if (!result.success) {
+                _superuserListMode.value = currentMode
+                onComplete(currentMode)
+                return@launch
+            }
+
+            val localSyncRequest = newLocalDenyListSyncRequest(
+                targetMode = result.appliedMode,
+                fallbackMode = currentMode,
+            )
+            setPendingLocalDenyListSyncRequest(localSyncRequest)
+
+            Config.suListMode = result.appliedMode
+            _superuserListMode.value = result.appliedMode
+            onSuperuserModeChanged?.invoke()
+            onComplete(result.appliedMode)
+            if (!result.zygiskNextActive) {
+                localDenyListSyncRequests.trySend(localSyncRequest)
+            }
+        }
+    }
+
+    fun refreshSuperuserListMode(onComplete: (Int) -> Unit = {}) {
+        viewModelScope.launch {
+            val currentMode = normalizeSuperuserListMode(Config.suListMode)
+            if (!Config.suProfessionalMode) {
+                _superuserListMode.value = currentMode
+                onComplete(currentMode)
+                return@launch
+            }
+            val resolvedMode = superuserModeSync.resolveMode(currentMode)
+            if (resolvedMode != currentMode) {
+                setPendingLocalDenyListSyncRequest(
+                    newLocalDenyListSyncRequest(
+                        targetMode = resolvedMode,
+                        fallbackMode = currentMode,
+                    ),
+                )
+                Config.suListMode = resolvedMode
+            }
+            _superuserListMode.value = resolvedMode
+            onComplete(resolvedMode)
+        }
+    }
+
+}

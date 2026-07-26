@@ -26,7 +26,7 @@
 - [Modules] 新增可从模块列表访问的独立模块操作页面
 - [Install] 新增下载并修补方式，支持下载启动镜像并修补
 - [Install] 支持通过 Intent 过滤器从外部应用打开 `.zip` 文件
-- [General] 更名为 WeaveMask，使用自定义包名 `io.github.seyud.weave`
+- [General] 更名为 WeaveMask，使用自定义包名 `oi.masksu.com`
 - [General] 新增 Telegram 和 QQ 社群链接
 - [Build] 将 `buildSrc` 迁移至 `build-logic` 组合构建
 - [Build] 将 stub 资源拆分为独立的 `stub-res` 模块

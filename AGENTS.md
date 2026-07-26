@@ -47,7 +47,7 @@ Generated code: `native/out/generated/flags.h` and `flags.rs` are created during
 ### App (`app/`)
 
 Gradle composite build. Modules:
-- **apk** — Main application (Jetpack Compose + Miuix). Package: `io.github.seyud.weave`
+- **apk** — Main application (Jetpack Compose + Miuix). Package: `oi.masksu.com`
 - **core** — Library module with business logic, Room DB, Retrofit, AIDL
 - **shared** — Pure Java/Android library (no Kotlin). Used by core and stub
 - **stub** — Lightweight stub APK for hidden mode. Obfuscated with lsparanoid

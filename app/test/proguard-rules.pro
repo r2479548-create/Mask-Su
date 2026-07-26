@@ -3,7 +3,7 @@
 -keep class androidx.test.** { *; }
 
 # Make sure the classloader constructor is kept
--keepclassmembers class io.github.seyud.weave.test.TestClassLoader { <init>(); }
+-keepclassmembers class oi.masksu.com.test.TestClassLoader { <init>(); }
 
 # Repackage dependencies
 -repackageclasses 'deps'

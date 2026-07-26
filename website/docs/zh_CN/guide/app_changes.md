@@ -29,7 +29,7 @@
 - 集成 WebUI 主题注入（`MonetColorsProvider`）— 模块 WebUI 跟随应用的 Monet 配色方案
 - 新增下载并修补安装方式，支持下载启动镜像并修补
 - 支持通过 Intent 过滤器从外部应用打开 `.zip` 文件
-- 更名为 WeaveMask，使用自定义包名 `io.github.seyud.weave`
+- 更名为 WeaveMask，使用自定义包名 `oi.masksu.com`
 - 将所有 Rikka UI 依赖替换为 Miuix 组件
 - 将 KAPT 注解处理替换为 Kotlin Serialization 和 Compose 编译器插件
 - 将 `buildSrc` 迁移至 `build-logic` 组合构建

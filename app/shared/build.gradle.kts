@@ -5,6 +5,6 @@ plugins {
 setupCommon()
 
 android {
-    namespace = "io.github.seyud.shared"
+    namespace = "oi.masksu.com.shared"
     enableKotlin = false
 }
