@@ -67,8 +67,6 @@ import oi.masksu.com.core.R as CoreR
 import kotlinx.coroutines.flow.onEach
 import oi.masksu.com.ui.about.blend.ColorBlendToken
 import oi.masksu.com.ui.about.effect.BgEffectBackground
-import oi.masksu.com.ui.home.DeveloperItem
-import oi.masksu.com.ui.home.IconLink
 import top.yukonga.miuix.kmp.basic.Card
 import top.yukonga.miuix.kmp.basic.CardDefaults
 import top.yukonga.miuix.kmp.basic.Icon
